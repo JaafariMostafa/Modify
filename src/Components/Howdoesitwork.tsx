@@ -60,7 +60,7 @@ export default function Howdoesitwork() {
         </div>
         <section 
             className='w-full shadow grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1
-                p-10 rounded-2xl dark:bg-black dark:border border-neutral-900 gap-4'>
+                p-10 rounded-2xl dark:bg-black bg-violet-50 dark:border border-neutral-900 gap-4'>
             {Process_Steps.map((card) => {
                 return (
                     <div 
@@ -71,7 +71,7 @@ export default function Howdoesitwork() {
                             <div className='w-16 h-16 flex items-center justify-center rounded-full bg-[#892CDC]/10'>
                                 {card.icon}
                             </div>
-                            <h2 className='text-lg font-semibold text-neutral-600 dark:text-[#D9ACF5]'>
+                            <h2 className='text-lg font-semibold text-neutral-500 dark:text-[#D9ACF5]'>
                                 {card.id + '.' + ' ' + card.title}
                             </h2>
                         </div>
