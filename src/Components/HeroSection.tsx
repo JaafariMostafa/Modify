@@ -36,7 +36,7 @@ export default function HeroSection() {
                     <h1
                         className="text-5xl md:text-6xl lg:text-7xl primary-color font-bold leading-12 
                             py-4 text-left lg:w-3/4 dark:text-white Fade-In">
-                        Turn ideas into thriving <span className="text-[#892CDC]">brands!</span>
+                        Turn ideas into thriving <span className="text-[#892CDC]">Brands!</span>
                     </h1>
                     <p className="text-xl text-left dark:text-white text-neutral-600">
                         No stock. No capital. No experience needed. <br />

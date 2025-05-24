@@ -9,7 +9,7 @@ const FakeProductData = [
         title: "Modern Wooden Chair",
         price: 120,
         image: "https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg",
-        styles: '-rotate-[20deg] translate-x-40 translate-y-10 scale-75 z-10 group-hover:scale-100 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:-rotate-0 transition-transform duration-500 ease-in-out',
+        styles: 'lg:-rotate-[20deg] lg:translate-x-40 lg:translate-y-10 lg:scale-75 lg:z-10 lg:group-hover:scale-100 lg:group-hover:translate-x-0 lg:group-hover:translate-y-0 lg:group-hover:-rotate-0 lg:transition-transform lg:duration-500 lg:ease-in-out',
     },
     {
         id: 2,
@@ -23,7 +23,7 @@ const FakeProductData = [
         title: "Cozy Fabric Sofa",
         price: 350,
         image: "https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg",
-        styles: 'rotate-[20deg] -translate-x-40 translate-y-10 scale-75 z-10 group-hover:scale-100 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:-rotate-0 transition-transform duration-500 ease-in-out',
+        styles: 'lg:rotate-[20deg] lg:-translate-x-40 lg:translate-y-10 lg:scale-75 lg:z-10 lg:group-hover:scale-100 lg:group-hover:translate-x-0 lg:group-hover:translate-y-0 lg:group-hover:-rotate-0 lg:transition-transform lg:duration-500 lg:ease-in-out',
     }
 ];
 export default function FeaturedProducts() {
@@ -34,7 +34,7 @@ export default function FeaturedProducts() {
             SecondaryTitle='Customize Your Product'
             ButtonContent='See All Products'
         />
-        <section className='group grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4'>
+        <section className='group grid place-items-center lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4'>
             {FakeProductData.map((product) => {
                 return (
                     <FeaturedProduct

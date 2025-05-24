@@ -10,7 +10,7 @@ interface ProductCardTyes{
 }
 export default function FeaturedProduct({ProductImage, ProductTitle, ProductPrice, CLASSNAME}:ProductCardTyes) {
   return (
-    <main className={`w-full p-1 bg-[#892CDC] dark:bg-black border border-[#892CDC]/50 dark:border-neutral-800 rounded-2xl
+    <main className={`w-full max-w-[500px] p-1 bg-[#892CDC] dark:bg-black border border-[#892CDC]/50 dark:border-neutral-800 rounded-2xl
     ${CLASSNAME}`}>
         <div className='relative w-full h-[30vh] shadow-lg border border-neutral-400 rounded-2xl overflow-hidden'>
             <Image 
