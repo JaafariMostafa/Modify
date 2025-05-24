@@ -1,5 +1,6 @@
 import React from 'react'
 import FeaturedProduct from './CradsUI/FeaturedProduct'
+import SectionTitle from './SectionTitle';
 
 
 const FakeProductData = [
@@ -28,15 +29,20 @@ const FakeProductData = [
 export default function FeaturedProducts() {
   return (
     <main className='lg:px-20 md:px-12 px-6 py-20'>
+        <SectionTitle 
+            PrimaryTitle='Featured Product'
+            SecondaryTitle='Customize Your Product'
+            ButtonContent='See All Products'
+        />
         <section className='group grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4'>
             {FakeProductData.map((product) => {
                 return (
                     <FeaturedProduct
-                    key={product.id}
-                    ProductImage={product.image}
-                    ProductTitle={product.title}
-                    ProductPrice={product.price}
-                    CLASSNAME={product.styles}
+                        key={product.id}
+                        ProductImage={product.image}
+                        ProductTitle={product.title}
+                        ProductPrice={product.price}
+                        CLASSNAME={product.styles}
                     />
                 )
             })}

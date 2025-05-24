@@ -1,27 +1,23 @@
 import { ModeToggle } from "@/app/ModeToggle";
 import UserDropDownMenu from "./UserDropDownMenu";
 import SearchProducts from "./SearchProducts";
+import SmallScreenMenu from "./SmallScreenMenu";
+import { Header_Navigation_Links } from "@/GlobalLinks";
 
 
-const Header_Navigation_Links = [
-    { name: "Home", href: "/" },
-    { name: "Products", href: "/products" },
-    { name: "About Us", href: "/about" },
-    { name: "Contact", href: "/contact" },
-    { name: "Blog", href: "/blog" },
-];
+
 export default function Header(){
     return (
-        <main className="sticky backdrop-blur bg-white/10 dark:bg-black/50 top-0  w-full z-40 border-b py-3 dark:border-neutral-800 border-neutral-300 lg:px-20 md:px-12 px-6 flex gap-8 items-center justify-between">
-            <h1 className="text-2xl uppercase font-bold dark:text-white primary-color">
+        <main className="sticky backdrop-blur dark:bg-black/50 top-0  w-full z-40 border-b py-3 dark:border-neutral-800 border-neutral-300 lg:px-20 md:px-12 px-6 flex gap-8 items-center justify-between">
+            <h1 className="text-2xl uppercase font-bold text-[#892CDC] dark:text-white">
                 Modify<span className="text-sm lowercase font-normal">.ma</span>
             </h1>
-            <ul>
+            <ul className="hidden lg:flex items-center justify-center">
                 {Header_Navigation_Links.map((link, index) => (
                     <li key={index} className="inline-block">
                         <a
                             href={"#" + (link.href.startsWith("/") ? link.href.slice(1) : link.href)}
-                            className="text-sm font-semibold text-neutral-700 dark:text-neutral-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-200 px-4 py-2"
+                            className="text-sm text-neutral-700 dark:text-neutral-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-200 px-4 py-2"
                         >
                             {link.name}
                         </a>
@@ -42,7 +38,10 @@ export default function Header(){
                     <option value="English">English</option>
                     <option value="French">French</option>
                 </select>
-                <ModeToggle />
+                <div className="lg:flex hidden">
+                    <ModeToggle />
+                </div>
+                <SmallScreenMenu />
             </section>
         </main>
     )

@@ -61,7 +61,7 @@ export default function HeroSection() {
                 </div>
                 {/* Right: Product Image */}
 
-                <div className="w-[400px] h-[60vh] relative overflow-hidden rounded-lg">
+                <div className="lg:block md:block sm:block hidden w-[400px] h-[60vh] shadow relative overflow-hidden rounded-lg">
                     {/* Product Image */}
                     <Image 
                         src={currentImage}
