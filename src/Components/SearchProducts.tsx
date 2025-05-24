@@ -26,7 +26,7 @@ export default function SearchProducts() {
         {IsOpen && (
             <section 
                 className='absolute top-0 left-0 z-50 w-full h-screen 
-                    bg-black/50 flex items-center justify-center'>
+                    bg-black/80 flex items-center justify-center'>
                 <section 
                     ref={SearchRef}
                     className='min-w-[400px] w-1/2 min-h-50 rounded-lg

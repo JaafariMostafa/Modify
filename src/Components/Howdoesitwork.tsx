@@ -52,7 +52,7 @@ const Process_Steps: Step[] = [
 ];
 export default function Howdoesitwork() {
   return (
-    <main className='w-full lg:px-20 md:px-12 px-6'>
+    <main id='howitworks?' className='lg:scroll-mt-44 scroll-mt-28 w-full lg:px-20 md:px-12 px-6'>
         <div className='w-full flex justify-center mb-10'>
             <h1 className='text-2xl text-[#892CDC] dark:text-[#D9ACF5] font-semibold'>
                 How does it work?

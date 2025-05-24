@@ -28,7 +28,7 @@ const FakeProductData = [
 ];
 export default function FeaturedProducts() {
   return (
-    <main className='lg:px-20 md:px-12 px-6 py-20'>
+    <main id="featuredproducts" className='lg:px-20 md:px-12 px-6 py-20'>
         <SectionTitle 
             PrimaryTitle='Featured Product'
             SecondaryTitle='Customize Your Product'

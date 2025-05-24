@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { Ubuntu } from 'next/font/google'
+import ScrollToTop from "@/Components/ScrollToTop";
 
 const ubuntu = Ubuntu({
   subsets: ['latin'],
@@ -20,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
         className={`w-full overflow-x-hidden bg-white dark:bg-[#0a0a0a] ${ubuntu.className} antialiased`}
       >
@@ -31,6 +32,7 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
+        <ScrollToTop />
       </body>
     </html>
   );

@@ -17,7 +17,7 @@ export default function Home() {
       </section>
       <section className="py-20 space-y-10">
         <Howdoesitwork />
-        <section className="w-full lg:px-20 md:px-12 px-6 lg:py-20 py-10 grid lg:grid-cols-2 gap-10">
+        <section id="pricing" className="lg:scroll-mt-0 scroll-mt-14 w-full lg:px-20 md:px-12 px-6 lg:py-20 py-10 grid lg:grid-cols-2 gap-10">
           <ProductPlacement />
           <ServiceOverview />
         </section>
