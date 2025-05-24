@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Optional: background and text color with CSS variables (اختياري) */
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -13,9 +14,52 @@
     --foreground: #ededed;
   }
 }
-
+.primary-color{
+  color: #0a0a0a;
+}
+.para-color{
+  color: #D9ACF5;
+}
 body {
+  background-color: var(--background);
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
+}
+
+
+.Fade-In{
+  animation: fadeIn 5s ease-in-out forwards;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.Fade-In-Image {
+  animation: fadeInImage 10s ease-in-out forwards;
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+}
+
+@keyframes fadeInImage {
+  0% {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
 }
