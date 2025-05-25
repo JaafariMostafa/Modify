@@ -9,7 +9,7 @@ import ServiceOverview from "@/Components/ServiceOverview";
 
 export default function Home() {
   return (
-    <main className="w-full overflow-x-hidden">
+    <main className="w-full">
       <Header />
       <section className=" dark:from-black dark:to-[#222831]">
         <HeroSection />

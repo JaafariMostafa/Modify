@@ -32,7 +32,7 @@ export default function ServiceOverview() {
           with the ability to customize every part of the product easily and professionally.
         </p>
       </div>
-      <ul>
+      <ul className="w-full max-w-3xl space-y-6">
         {Content.map((item, index) => (
           <li key={index} className="flex items-start gap-1">
             <span className="border border-[#892CDC] rounded-full text-[#892CDC] p-1 flex-shrink-0">

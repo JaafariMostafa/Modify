@@ -8,7 +8,12 @@ import { Header_Navigation_Links } from "@/GlobalLinks";
 
 export default function Header(){
     return (
-        <main className="sticky backdrop-blur dark:bg-black/50 top-0  w-full z-40 border-b py-3 dark:border-neutral-800 border-neutral-300 lg:px-20 md:px-12 px-6 flex gap-8 items-center justify-between">
+        <header 
+            className="sticky top-0 z-50 backdrop-blur 
+                dark:bg-black/50 w-full border-b 
+                py-3 dark:border-neutral-800 border-neutral-300 
+                lg:px-20 md:px-12 px-6 flex gap-8 items-center 
+                justify-between">
             <h1 className="text-2xl uppercase font-bold text-[#892CDC] dark:text-white">
                 Modify<span className="text-sm lowercase font-normal">.ma</span>
             </h1>
@@ -43,6 +48,6 @@ export default function Header(){
                 </div>
                 <SmallScreenMenu />
             </section>
-        </main>
+        </header>
     )
 }

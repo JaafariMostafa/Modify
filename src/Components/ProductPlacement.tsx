@@ -18,7 +18,7 @@ const Front_Placements = [
     price: 4.99,
     top: '22%',
     left: '49%',
-    invoicePos: { top: '50%', left: '50%' },
+    invoicePos: { top: '50%', left: '40%' },
   },
   {
     id: 'leftSleeve',
@@ -34,7 +34,7 @@ const Front_Placements = [
     price: 2.99,
     top: '45%',
     left: '75%',
-    invoicePos: { top: '10%', left: '80%' },
+    invoicePos: { top: '60%', left: '30%' },
   },
 ];
 
@@ -147,7 +147,7 @@ export default function ProductPlacement() {
               key={p.id}
               id={`invoice-${p.id}`}
               style={{ top: p.invoicePos.top, left: p.invoicePos.left }}
-              className="absolute shadow-lg w-48 dark:bg-black shadow-md border 
+              className="absolute shadow-lg w-48 bg-black shadow-md border 
               border-neutral-800 rounded-xl p-4 text-left z-20"
             >
               <h3 className="font-semibold text-white mb-1">{p.label}</h3>
