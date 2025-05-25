@@ -6,7 +6,7 @@ export default function SectionTitle({PrimaryTitle, SecondaryTitle, ButtonConten
   return (
     <main className='w-full pb-10 flex justify-between items-start'>
         <div className='w-full pb-10 flex flex-col justify-start items-start'>
-            <h1 className='font-bold text-3xl text-neutral-700 dark:text-neutral-300'>
+            <h1 className='font-bold lg:text-3xl md:text-3xl sm:text-2xl text-xl text-neutral-700 dark:text-neutral-300'>
                 {PrimaryTitle}
             </h1>
             <span className='text-neutral-500 text-sm dark:text-[#D9ACF5]'>

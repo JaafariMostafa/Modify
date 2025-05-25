@@ -44,7 +44,7 @@ export default function HeroSection() {
                             With Modify.ma, you&apos;ll have a powerful partner in branding, technology, and innovation.
                         </span>
                     </p>
-                    <div className="py-6 flex gap-4 items-center Fade-In">
+                    <div className="py-6 flex flex-col items-center w-full lg:flex-row md:flex-row sm:flex-row gap-2 items-center Fade-In">
                         <button
                             className="flex bg-[#892CDC] hover:bg-[#892CDC]/90
                                 transition-all duration-200 items-center gap-2 

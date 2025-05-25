@@ -19,7 +19,7 @@ export default function SmallScreenMenu() {
         };
     }, []);
     return (
-        <main className='lg:hidden block'>
+        <main className='lg:hidden flex '>
             <MenuIcon 
                 onClick={() => setIsOpen(true)} 
                 className="cursor-pointer text-neutral-700 dark:text-white"/>
@@ -62,6 +62,10 @@ export default function SmallScreenMenu() {
                                 </a>
                             ))}
                         </ul>
+                    </div>
+                    <div className='absolute lg:hidden md:hidden sm:hidden bottom-2 w-full p-1 flex flex-col items-center justify-center gap-1'>
+                        <button className='py-2 w-full rounded-lg border text-sm bg-black/80 dark:bg-white dark:hover:bg-white/80 dark:text-black border-neutral-500 font-semibold'>Login</button>
+                        <button className='py-2 w-full rounded-lg border text-sm dark:text-white dark:hover:bg-white/20 border-neutral-500 text-black'>Register</button>
                     </div>
                 </section>
             </div>

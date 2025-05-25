@@ -33,7 +33,7 @@ export default function UserDropDownMenu() {
     }, [isOpen])
 
     return (
-        <main className='relative'>
+        <main className='relative hidden sm:block md:block lg:block'>
             <UserIcon
                 ref={iconRef}
                 onClick={toggleMenu}
