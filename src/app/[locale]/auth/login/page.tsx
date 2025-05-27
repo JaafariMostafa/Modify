@@ -6,9 +6,9 @@ import Image from 'next/image'
 export default function page() {
   return (
     <main>
-      <section className='w-full flex'>
+      <section className='w-full lg:flex justify-center md:flex block'>
         <LoginForm />
-        <div className='relative flex-shrink-0 w-1/2 h-screen overflow-hidden rounded-lg'>
+        <div className='relative lg:block hidden flex-shrink-0 w-1/2 h-screen overflow-hidden rounded-lg'>
           <Image
             src='/LoginBg.jpg'
             fill
