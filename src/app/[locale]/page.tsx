@@ -1,4 +1,5 @@
 import FeaturedProducts from "@/Components/FeaturedProducts";
+import Footer from "@/Components/Footer";
 import Header from "@/Components/Header";
 import HeroSection from "@/Components/HeroSection";
 import Howdoesitwork from "@/Components/Howdoesitwork";
@@ -26,6 +27,7 @@ export default async function Home() {
             <ServiceOverview />
           </section>
         </section>
+        <Footer />
     </main>
   );
 }

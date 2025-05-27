@@ -1,12 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Facebook, Twitter, Instagram, Linkedin, Github, Mail, Phone, MapPin, ChevronUp } from 'lucide-react';
 
-export default function ModernFooter() {
-  const [darkMode, setDarkMode] = useState(false);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
+export default function Footer() {
 
   return (
     <>
