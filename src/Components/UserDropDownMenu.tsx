@@ -41,7 +41,7 @@ export default function UserDropDownMenu() {
                 className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-neutral-900 
                          transition-colors duration-200 border dark:border-neutral-800"
             >
-                <UserIcon className="w-5 h-5 text-gray-600 dark:text-gray-400" />
+                <UserIcon className="w-5 h-5 text-neutral-500 dark:text-gray-400" />
             </button>
 
             {isOpen && (

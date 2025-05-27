@@ -19,9 +19,13 @@ export default function SearchProducts() {
   return (
     <main>
         <span 
-            className="flex cursor-pointer p-2 rounded-full hover:bg-gray-100 dark:hover:bg-neutral-900 
-                         transition-colors duration-200 border dark:border-neutral-800">
-            <Search onClick={() => setIsOpen(!IsOpen)} size={20} />
+            className="flex cursor-pointer p-2 rounded-full 
+                hover:bg-gray-100 dark:hover:bg-neutral-900 
+                transition-colors duration-200 border 
+                dark:border-neutral-800">
+            <Search 
+                className="w-5 h-5 text-neutral-500 dark:text-gray-400"
+                onClick={() => setIsOpen(!IsOpen)} size={20} />
         </span>
         {IsOpen && (
             <section 

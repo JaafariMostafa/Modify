@@ -46,14 +46,14 @@ export default function LanguageSwitcher() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2 px-3 py-2 rounded-full 
-        border dark:bg-black dark:border-neutral-800 border-violet-300
+        border dark:bg-black dark:border-neutral-800
         dark:hover:bg-neutral-900 transition-all duration-200 
         text-sm font-medium"
       >
-        <span className="text-base dark:text-white text-[#892CDC]">
+        <span className="text-base dark:text-white text-neutral-500">
           <Languages size={18} />
         </span>
-        <span className="dark:text-gray-700 text-[#892CDC]">{currentLocale.short}</span>
+        <span className="dark:text-gray-500 text-neutral-500">{currentLocale.short}</span>
         <svg
           className={`w-3 h-3 text-gray-500 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
           fill="none"

@@ -57,9 +57,9 @@ export default function HeroSection() {
                             {t('hero_cta_button')} <ArrowUpRight className={` ${Rotate_Icon}`} size={20} />
                         </button>
                         <button
-                            className="flex bg-black/10 hover:bg-[#892CDC]/30 dark:bg-neutral-900 dark:hover:bg-neutral-900/10 
+                            className="flex bg-transparent hover:bg-[#892CDC]/10 dark:bg-neutral-900 dark:hover:bg-neutral-900/10 
                                 transition-all duration-200 items-center gap-2 py-2 text-[#892CDC] dark:text-neutral-300
-                                px-6 rounded-lg border border-[#892CDC] dark:border-neutral-800">
+                                px-6 rounded-lg border border-[#892CDC]/50 dark:border-neutral-800">
                             {t('hero_cta_button_secondary')} <ArrowUpRight className={` ${Rotate_Icon}`} size={20} />
                         </button>
                     </div>
