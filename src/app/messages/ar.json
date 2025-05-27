@@ -82,5 +82,17 @@
             ],
             "cta_button": "استكشف منتجاتنا"
         }
+    },
+    "login_page": {
+        "primary_title": "ابدأ مع ",
+        "primary_title_marks": "Modify.ma",
+        "secondary_title": "قم بتسجيل الدخول إلى حسابك للوصول إلى جميع الميزات وإدارة مساحة عملك.",
+        "email_label": "البريد الإلكتروني",
+        "email_placeholder":"البريد الإلكتروني",
+        "password_label": "كلمة المرور",
+        "password_placeholder":"كلمة المرور",
+        "login_button": "تسجيل الدخول",
+        "or":"أو",
+        "login_with_google_provider": "تسجيل الدخول باستخدام جوجل"
     }
 }

@@ -82,5 +82,17 @@
             ],
             "cta_button": "Explore Our Products"
         }
+    },
+    "login_page": {
+        "primary_title": "Get Started with ",
+        "primary_title_marks": "Modify.ma",
+        "secondary_title": "Sign in to your account to access all features and manage your workspace.",
+        "email_label": "email",
+        "email_placeholder":"Email",
+        "password_label": "password",
+        "password_placeholder":"Password",
+        "login_button": "login",
+        "or":"Or",
+        "login_with_google_provider": "Login with Google"
     }
 }

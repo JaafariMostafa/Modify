@@ -18,7 +18,8 @@ export default function ScrollToTop() {
         <>
             {ShowScrollToTop && (
                 <div className='p-1 rounded-full bg-violet-600 border-2
-                    fixed bottom-4 right-4 z-50 cursor-pointer hover:bg-neutral-600 dark:hover:bg-neutral-300 dark:hover:bg-neutral-700 transition-colors duration-200'
+                    fixed bottom-4 right-4 z-50 cursor-pointer hover:bg-neutral-600 
+                    dark:hover:bg-neutral-700 transition-colors duration-200'
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                     <ArrowUp size={20} />
                 </div>

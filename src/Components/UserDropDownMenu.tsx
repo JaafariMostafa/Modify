@@ -1,5 +1,4 @@
 'use client';
-
 import { UserIcon, LogIn, UserPlus } from 'lucide-react';
 import Link from 'next/link';
 import React, { useRef, useEffect } from 'react';
@@ -55,7 +54,7 @@ export default function UserDropDownMenu() {
                              overflow-hidden z-50"
                 >
                     <Link
-                        href="/login"
+                        href="/auth/login"
                         onClick={() => setIsOpen(false)}
                         className="flex items-center gap-2 px-3 py-2 
                                  text-sm text-gray-700 dark:text-gray-300 hover:text-white
@@ -66,7 +65,7 @@ export default function UserDropDownMenu() {
                         Login
                     </Link>
                     <Link
-                        href="/register"
+                        href="/auth/register"
                         onClick={() => setIsOpen(false)}
                         className="flex items-center gap-2 px-3 py-2 
                                  text-sm text-gray-700 dark:text-gray-300 
