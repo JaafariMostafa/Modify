@@ -36,11 +36,11 @@ export default async function ServiceOverview() {
       </div>
       <ul className="w-full max-w-3xl space-y-6">
         {Content.map((item, index) => (
-          <li key={index} className="flex items-start gap-1">
+          <li key={index} className="flex items-start gap-3">
             <span className="border border-[#892CDC] rounded-full text-[#892CDC] p-1 flex-shrink-0">
               <item.icon />
             </span>
-            <div>
+            <div className="space-y-2">
               <h3 className="text-lg font-semibold text-neutral-400">{t(item.title)}</h3>
               <p className="text-gray-600 text-sm">{t(item.description)}</p>
             </div>

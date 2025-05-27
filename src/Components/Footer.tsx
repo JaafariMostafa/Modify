@@ -1,12 +1,12 @@
 import React from 'react';
-import { Facebook, Twitter, Instagram, Linkedin, Github, Mail, Phone, MapPin, ChevronUp } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Linkedin, Github, Mail, Phone, MapPin } from 'lucide-react';
 
 export default function Footer() {
 
   return (
     <>
       {/* Footer */}
-      <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 transition-colors duration-300">
+      <footer className="bg-white dark:bg-neutral-800 border-t border-neutral-300 dark:border-neutral-600 transition-colors duration-300">
         <div className="container mx-auto px-4 py-12">
           {/* Main Footer Content */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
@@ -14,7 +14,7 @@ export default function Footer() {
             {/* Company Info */}
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                <div className="w-8 h-8 bg-violet-600 rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold text-sm">C</span>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white">Company</h3>
@@ -33,11 +33,16 @@ export default function Footer() {
 
             {/* Products */}
             <div className="space-y-4">
-              <h4 className="text-lg font-semibold text-gray-900 dark:text-white">Products</h4>
+              <h4 
+                className="text-lg font-semibold text-gray-900 
+                  dark:text-white">Products</h4>
               <ul className="space-y-3">
                 {['Web Design', 'Mobile Apps', 'E-commerce', 'Analytics', 'Marketing'].map((item) => (
                   <li key={item}>
-                    <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors">
+                    <a 
+                      href="#" 
+                      className="text-gray-600 dark:text-gray-400 
+                        hover:text-violet-600 dark:hover:text-violet-400 text-sm transition-colors">
                       {item}
                     </a>
                   </li>
@@ -51,7 +56,11 @@ export default function Footer() {
               <ul className="space-y-3">
                 {['Documentation', 'Help Center', 'Tutorials', 'API Reference', 'Community'].map((item) => (
                   <li key={item}>
-                    <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors">
+                    <a 
+                      href="#" 
+                      className="text-gray-600 dark:text-gray-400 
+                      hover:text-violet-600 dark:hover:text-violet-400 
+                      text-sm transition-colors">
                       {item}
                     </a>
                   </li>
@@ -94,9 +103,13 @@ export default function Footer() {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-sm"
+                  className="flex-1 px-4 py-2 border border-gray-300 
+                  dark:border-gray-600 rounded-lg bg-white dark:bg-black 
+                  text-gray-900 dark:text-white placeholder-gray-500 
+                  dark:placeholder-gray-400 outline-none focus:ring-1 ring-violet-500
+                  focus:border-transparent transition-colors text-sm"
                 />
-                <button className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors text-sm font-medium">
+                <button className="px-6 py-2 bg-violet-600 hover:bg-violet-700 text-white rounded-lg transition-colors text-sm font-medium">
                   Subscribe
                 </button>
               </div>
@@ -122,16 +135,6 @@ export default function Footer() {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Back to Top Button */}
-        <div className="fixed bottom-6 right-6">
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center"
-          >
-            <ChevronUp className="w-5 h-5" />
-          </button>
         </div>
       </footer>
     </>
