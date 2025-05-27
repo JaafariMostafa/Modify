@@ -6,9 +6,10 @@ interface ProductCardTyes{
     ProductImage: string;
     ProductTitle: string;
     ProductPrice: number;
+    Card_BTN_Text: string;
     CLASSNAME?: string;
 }
-export default function FeaturedProduct({ProductImage, ProductTitle, ProductPrice, CLASSNAME}:ProductCardTyes) {
+export default function FeaturedProduct({ProductImage, ProductTitle, ProductPrice, Card_BTN_Text, CLASSNAME}:ProductCardTyes) {
   return (
     <main className={`w-full max-w-[500px] p-1 bg-gray-100
         dark:bg-black border border-neutral-300 shadow-lg
@@ -24,7 +25,7 @@ export default function FeaturedProduct({ProductImage, ProductTitle, ProductPric
         </div>
         <div className='p-2 space-y-2'>
             <h1 className='text-xl font-semibold 
-                dark:text-neutral-400 dark:text-[#892CDC] 
+                dark:text-neutral-400
                 text-neutral-600'>
                 {ProductTitle}
             </h1>
@@ -35,9 +36,9 @@ export default function FeaturedProduct({ProductImage, ProductTitle, ProductPric
                 </ins>
                 <button 
                     className='px-6 py-2 border border-neutral-300 dark:border-neutral-800 
-                    dark:hover:text-neutral-500 dark:hover:bg-neutral-900/30 dark:text-neutral-300 text-neutral-700 dark:hover:bg-black/30 
+                    dark:hover:text-neutral-500 dark:text-neutral-300 text-neutral-700 dark:hover:bg-black/30 
                     hover:bg-[#892CDC]/10 rounded-2xl'>
-                    Customize Now
+                    {Card_BTN_Text}
                 </button>
             </div>
         </div>

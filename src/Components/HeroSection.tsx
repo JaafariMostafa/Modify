@@ -1,5 +1,6 @@
 'use client';
 import { ArrowUpRight, Star } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -22,6 +23,10 @@ export default function HeroSection() {
     }
 
     const currentImage = useImageCarousel(images);
+    const t = useTranslations('hero');
+    const locale = useLocale();
+    const IsArabic = locale === 'ar';
+    const Rotate_Icon = IsArabic ? '-rotate-90' : '';
     return (
         <main className="w-full min-h-80 lg:px-20 md:px-12 px-6 pb-6 pt-12">
             <section className="w-full flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0">
@@ -31,31 +36,31 @@ export default function HeroSection() {
                         className="flex items-center gap-2 px-4 py-1 border-[#892CDC] 
                             text-[#892CDC] rounded-full text-sm 
                             w-max border">
-                        <Star size={20} className="text-[#892CDC] fill-[#892CDC]" /> Premium Print On Demand
+                        <Star size={20} className="text-[#892CDC] fill-[#892CDC]" /> {t('printOnDemandPremium')}
                     </span>
                     <h1
                         className="text-5xl md:text-6xl lg:text-7xl primary-color font-bold leading-12 
-                            py-4 text-left lg:w-3/4 dark:text-white Fade-In">
-                        Turn ideas into thriving <span className="text-[#892CDC]">Brands!</span>
+                            py-4 lg:w-3/4 dark:text-white Fade-In">
+                        {t('hero_title')} <span className="text-[#892CDC]">{t('hero_title_marks')}</span>
                     </h1>
-                    <p className="text-xl text-left dark:text-white text-neutral-600">
-                        No stock. No capital. No experience needed. <br />
+                    <p className="text-xl dark:text-white text-neutral-600">
+                        {t('noStockNoCapitalNoExperience')} <br />
                         <span className="text-sm dark:text-neutral-400">
-                            With Modify.ma, you&apos;ll have a powerful partner in branding, technology, and innovation.
+                            {t('modifyPartnerDescription')}
                         </span>
                     </p>
-                    <div className="py-6 flex flex-col items-center w-full lg:flex-row md:flex-row sm:flex-row gap-2 items-center Fade-In">
+                    <div className="py-6 flex flex-col w-full lg:flex-row md:flex-row sm:flex-row gap-2 items-center Fade-In">
                         <button
                             className="flex bg-[#892CDC] hover:bg-[#892CDC]/90
                                 transition-all duration-200 items-center gap-2 
                                 py-2 px-6 rounded-lg text-white border border-[#892CDC]">
-                            Start Today! <ArrowUpRight size={20} />
+                            {t('hero_cta_button')} <ArrowUpRight className={` ${Rotate_Icon}`} size={20} />
                         </button>
                         <button
                             className="flex bg-black/10 hover:bg-[#892CDC]/30 dark:bg-neutral-900 dark:hover:bg-neutral-900/10 
                                 transition-all duration-200 items-center gap-2 py-2 text-[#892CDC] dark:text-neutral-300
                                 px-6 rounded-lg border border-[#892CDC] dark:border-neutral-800">
-                            How it works ? <ArrowUpRight size={20} />
+                            {t('hero_cta_button_secondary')} <ArrowUpRight className={` ${Rotate_Icon}`} size={20} />
                         </button>
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 import React from 'react'
 import FeaturedProduct from './CradsUI/FeaturedProduct'
 import SectionTitle from './SectionTitle';
+import { getTranslations } from 'next-intl/server';
 
 
 const FakeProductData = [
@@ -26,13 +27,14 @@ const FakeProductData = [
         styles: 'lg:rotate-[20deg] lg:-translate-x-40 lg:translate-y-10 lg:scale-75 lg:z-10 lg:group-hover:scale-100 lg:group-hover:translate-x-0 lg:group-hover:translate-y-0 lg:group-hover:-rotate-0 lg:transition-transform lg:duration-500 lg:ease-in-out',
     }
 ];
-export default function FeaturedProducts() {
+export default async function FeaturedProducts() {
+    const t = await getTranslations('featured_products');
   return (
     <main id="featuredproducts" className='lg:px-20 md:px-12 px-6 py-20'>
         <SectionTitle 
-            PrimaryTitle='Featured Product'
-            SecondaryTitle='Customize Your Product'
-            ButtonContent='See All Products'
+            PrimaryTitle={t('primary_title')}
+            SecondaryTitle={t('secondary_title')}
+            ButtonContent={t('view_all_button')}
         />
         <section className='group grid place-items-center lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4'>
             {FakeProductData.map((product) => {
@@ -41,6 +43,7 @@ export default function FeaturedProducts() {
                         key={product.id}
                         ProductImage={product.image}
                         ProductTitle={product.title}
+                        Card_BTN_Text={t('customize_your_product')}
                         ProductPrice={product.price}
                         CLASSNAME={product.styles}
                     />

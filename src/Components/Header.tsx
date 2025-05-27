@@ -1,8 +1,10 @@
+'use client'
 import { ModeToggle } from "@/app/ModeToggle";
 import UserDropDownMenu from "./UserDropDownMenu";
 import SearchProducts from "./SearchProducts";
 import SmallScreenMenu from "./SmallScreenMenu";
 import { Header_Navigation_Links } from "@/GlobalLinks";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 
 
@@ -32,7 +34,7 @@ export default function Header(){
             <section className="flex items-center gap-4">
                 <SearchProducts />
                 <UserDropDownMenu />
-                <select
+                {/* <select
                     className="rounded-lg border border-neutral-400 bg-neutral-200 bg-transparent 
                         py-2 px-4 text-sm focus:outline-none
                         dark:bg-neutral-900 primary-color dark:text-white cursor-pointer
@@ -42,7 +44,8 @@ export default function Header(){
                     <option value="العربية">العربية</option>
                     <option value="English">English</option>
                     <option value="French">French</option>
-                </select>
+                </select> */}
+                <LanguageSwitcher />
                 <div className="lg:flex hidden">
                     <ModeToggle />
                 </div>

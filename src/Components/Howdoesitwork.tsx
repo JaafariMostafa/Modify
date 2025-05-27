@@ -1,17 +1,16 @@
+import { getLocale, getTranslations } from 'next-intl/server';
 import React from 'react'
-
-
 
 interface Step {
     id: number;
-    title: string;
+    titleKey: string;
     icon: React.ReactNode;
 }
 
 const Process_Steps: Step[] = [
     {
         id: 1,
-        title: 'Sign Up',
+        titleKey: 'steps.0.title',
         icon: (
             <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
                 <circle cx="12" cy="8" r="4" stroke="#892CDC" strokeWidth="2" />
@@ -21,7 +20,7 @@ const Process_Steps: Step[] = [
     },
     {
         id: 2,
-        title: 'Create Project',
+        titleKey: 'steps.0.title',
         icon: (
             <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
                 <rect x="4" y="4" width="16" height="16" rx="2" stroke="#892CDC" strokeWidth="2" />
@@ -31,7 +30,7 @@ const Process_Steps: Step[] = [
     },
     {
         id: 3,
-        title: 'Collaborate',
+        titleKey: 'steps.0.title',
         icon: (
             <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
                 <circle cx="7" cy="12" r="3" stroke="#892CDC" strokeWidth="2" />
@@ -42,7 +41,7 @@ const Process_Steps: Step[] = [
     },
     {
         id: 4,
-        title: 'Launch',
+        titleKey: 'steps.0.title',
         icon: (
             <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
                 <path d="M12 3v18M12 3l4 4M12 3l-4 4" stroke="#892CDC" strokeWidth="2" />
@@ -50,12 +49,15 @@ const Process_Steps: Step[] = [
         ),
     },
 ];
-export default function Howdoesitwork() {
+export default async function Howdoesitwork() {
+    const t = await getTranslations('how_does_it_work');
+    const locale = await getLocale();
+    const IsArabic = locale === 'ar';
   return (
     <main id='howitworks?' className='lg:scroll-mt-44 scroll-mt-28 w-full lg:px-20 md:px-12 px-6'>
         <div className='w-full flex justify-center mb-10'>
             <h1 className='text-2xl text-[#892CDC] dark:text-[#D9ACF5] font-semibold'>
-                How does it work?
+                {t('title')}
             </h1>
         </div>
         <section 
@@ -71,8 +73,11 @@ export default function Howdoesitwork() {
                             <div className='w-16 h-16 flex items-center justify-center rounded-full bg-[#892CDC]/10'>
                                 {card.icon}
                             </div>
-                            <h2 className='text-lg font-semibold text-neutral-500 dark:text-[#D9ACF5]'>
-                                {card.id + '.' + ' ' + card.title}
+                            <h2
+                                className="text-lg font-semibold text-neutral-500 dark:text-[#D9ACF5]"
+                                style={{ direction: IsArabic ? 'rtl' : 'ltr' }}
+                            >
+                                {card.id + '.' + ' ' + t(card.titleKey)}
                             </h2>
                         </div>
                     </div>
