@@ -1,35 +1,37 @@
-'use client';
-
 import { ArrowUpRight, Edit3, Package, Truck } from "lucide-react";
+import { getLocale, getTranslations } from "next-intl/server";
 
 const Content = [
   {
-    title: 'Variety of Products',
-    description: 'More than 100 products you can customize: clothing, mugs, stationery, and many options.',
+    title: 'product_placement_content.features_list.0.title',
+    description: 'product_placement_content.features_list.0.description',
     icon: Package
   },
   {
-    title: 'Interactive Design',
-    description: 'Easy-to-use design tools allow you to place your design in different locations with a live cost preview.',
+    title: 'product_placement_content.features_list.1.title',
+    description: 'product_placement_content.features_list.1.description',
     icon: Edit3
   },
   {
-    title: 'Worldwide Shipping',
-    description: 'Fast and reliable shipping to all parts of the world with real-time order tracking.',
+    title: 'product_placement_content.features_list.2.title',
+    description: 'product_placement_content.features_list.2.description',
     icon: Truck
   }
 ];
-export default function ServiceOverview() {
+export default async function ServiceOverview() {
+  const t = await getTranslations('product_placement');
+  const locale = await getLocale();
+  const IsArabic = locale === 'ar';
+  const Rotate_Icon = IsArabic ? '-rotate-90' : '';
   return (
-    <section className="flex flex-col gap-12 mx-auto px-4 items-center">
+    <section dir={IsArabic ? "rtl" : "ltr"} className="flex flex-col gap-12 mx-auto px-4 items-center">
       {/* Service Overview */}
       <div className="w-full">
         <h2 className="text-3xl md:text-4xl font-bold text-[#892CDC] mb-6">
-          High-Quality Print-on-Demand Services
+          {t('product_placement_content.title')}
         </h2>
         <p className="text-gray-600 text-base md:text-lg leading-relaxed">
-          We offer a comprehensive platform to design and sell your products such as t-shirts, mugs, hoodies, and more,
-          with the ability to customize every part of the product easily and professionally.
+          {t('product_placement_content.description')}
         </p>
       </div>
       <ul className="w-full max-w-3xl space-y-6">
@@ -39,8 +41,8 @@ export default function ServiceOverview() {
               <item.icon />
             </span>
             <div>
-              <h3 className="text-lg font-semibold text-neutral-400">{item.title}</h3>
-              <p className="text-gray-600 text-sm">{item.description}</p>
+              <h3 className="text-lg font-semibold text-neutral-400">{t(item.title)}</h3>
+              <p className="text-gray-600 text-sm">{t(item.description)}</p>
             </div>
           </li>
         ))}
@@ -49,7 +51,7 @@ export default function ServiceOverview() {
         className="flex bg-[#892CDC] hover:bg-[#892CDC]/90
             transition-all duration-200 items-center gap-2 
             py-2 px-6 rounded-lg text-white border border-[#892CDC]">
-          Explore Our Products <ArrowUpRight size={20} />
+          {t('product_placement_content.cta_button')} <ArrowUpRight className={` ${Rotate_Icon}`} size={20} />
       </button>
     </section>
   );

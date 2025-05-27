@@ -1,12 +1,14 @@
 'use client';
 
+import { Languages } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
+import { useState, useRef, useEffect } from 'react';
 
 // Add as many languages as you want here
 const locales = [
-  { code: 'en', label: 'English' },
-  { code: 'ar', label: 'العربية' },
+  { code: 'en', label: 'English', flag: '/UkFlag.png', short: 'English' },
+  { code: 'ar', label: 'العربية', flag: '/SaudiaFlag.png', short: 'العربية' },
   // Add more languages as needed
 ];
 
@@ -21,27 +23,81 @@ function getPathWithLocale(pathname: string, locale: string) {
 export default function LanguageSwitcher() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Get current locale from pathname
+  const segments = pathname.split('/').filter(Boolean);
+  const currentLocaleCode = segments[0] && locales.some(l => l.code === segments[0]) ? segments[0] : 'en';
+  const currentLocale = locales.find(l => l.code === currentLocaleCode) || locales[0];
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   return (
-    <div>
-      {locales.map(({ code, label }) => {
-        const newPath = getPathWithLocale(pathname, code);
-        const search = searchParams.toString();
-        const href = search ? `${newPath}?${search}` : newPath;
+    <div className="relative" ref={dropdownRef}>
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex items-center gap-2 px-3 py-2 rounded-full 
+        border dark:bg-black dark:border-neutral-800 border-violet-300
+        dark:hover:bg-neutral-900 transition-all duration-200 
+        text-sm font-medium"
+      >
+        <span className="text-base dark:text-white text-[#892CDC]">
+          <Languages size={18} />
+        </span>
+        <span className="dark:text-gray-700 text-[#892CDC]">{currentLocale.short}</span>
+        <svg
+          className={`w-3 h-3 text-gray-500 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
 
-        return (
-          <Link
-            key={code}
-            href={href}
-            locale={false}
-            replace
-          >
-            <button>
-              {label}
-            </button>
-          </Link>
-        );
-      })}
+      {isOpen && (
+        <div className="absolute top-full right-0 mt-2 bg-white 
+        dark:bg-black dark:border-neutral-800 rounded-lg shadow-lg 
+        border border-gray-200 overflow-hidden z-50 min-w-[120px]">
+          {locales.map(({ code, flag, short }) => {
+            const newPath = getPathWithLocale(pathname, code);
+            const search = searchParams.toString();
+            const href = search ? `${newPath}?${search}` : newPath;
+
+            return (
+              <Link
+                key={code}
+                href={href}
+                locale={false}
+                replace
+                onClick={() => setIsOpen(false)}
+              >
+                <button
+                  className={`flex items-center gap-2 w-full px-3 py-2 
+                    text-sm transition-colors text-left 
+                    ${currentLocaleCode === code ? 
+                      'dark:bg-neutral-800 bg-[#892CDC] dark:text-white' 
+                      : 
+                      'text-gray-700 dark:hover:bg-neutral-900 hover:bg-neutral-300'
+                  }`}
+                >
+                  <img src={flag} width={30} className='rounded-lg overflow-hidden'/>
+                  <span className="font-medium">{short}</span>
+                </button>
+              </Link>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }

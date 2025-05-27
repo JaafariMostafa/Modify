@@ -1,4 +1,15 @@
 {
+    "header": [
+        {
+            "href": "home"
+        },{
+            "href": "featured products"
+        },{
+            "href": "how it works?"
+        },{
+            "href": "pricing"
+        }
+    ],
     "hero": {
         "printOnDemandPremium": "Premium Print On Demand",
         "hero_title": "Turn ideas into thriving ",
@@ -49,7 +60,27 @@
             },
             {
                 "label": "Right Sleeve"
+            },
+            {
+                "label": "Back"
             }
-        ]
+        ],
+        "product_placement_content": {
+            "title": "High-Quality Print-on-Demand Services",
+            "description": "We offer a comprehensive platform to design and sell your products such as t-shirts, mugs, hoodies, and more, with the ability to customize every part of the product easily and professionally.",
+            "features_list": [
+                {
+                    "title": "Variety of Products",
+                    "description": "More than 100 products you can customize: clothing, mugs, stationery, and many options."
+                },{
+                    "title": "Interactive Design",
+                    "description": "Easy-to-use design tools allow you to place your design in different locations with a live cost preview."
+                },{
+                    "title": "Worldwide Shipping",
+                    "description": "Fast and reliable shipping to all parts of the world with real-time order tracking."
+                }
+            ],
+            "cta_button": "Explore Our Products"
+        }
     }
 }

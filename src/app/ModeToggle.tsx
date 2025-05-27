@@ -20,16 +20,22 @@ export function ModeToggle() {
   }
 
   return (
-    <div className="border border-neutral-400 dark:border-neutral-700 w-max flex items-center gap-1 py-0.5 px-1 rounded-full">
+    <div
+      className="border border-neutral-400 dark:border-neutral-800 
+        w-max flex items-center gap-1 py-0.5 px-1 rounded-full">
         <span
-          className={`cursor-pointer rounded-full p-1 ${theme === 'light' ? "bg-gray-900/20 text-white" : "text-neutral-600"}`} 
+          className={`cursor-pointer rounded-full p-1 
+            ${theme === 'light' ? "bg-neutral-700 text-neutral-300" : "text-neutral-600"}`} 
           onClick={() => setTheme('light')} 
         >
           <Sun 
-          size={20} />
+            size={20} />
         </span>
         <span
-          className={`cursor-pointer rounded-full p-1 ${theme === 'dark' ? "bg-gray-500/20 text-white" : "text-neutral-400"}`} 
+          className={`cursor-pointer rounded-full p-1 
+            ${theme === 'dark' ? "bg-neutral-300 text-neutral-700" 
+              :
+              "text-neutral-400"}`} 
           onClick={() => setTheme('dark')}
         >
           <Moon 

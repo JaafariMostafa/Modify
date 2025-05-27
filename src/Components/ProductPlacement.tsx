@@ -41,7 +41,7 @@ const Front_Placements = [
 const Back_Placements = [
   {
     id: 'back',
-    label: 'Back',
+    labelKey: 'placements.4.label',
     price: 5.99,
     top: '45%',
     left: '48%',
@@ -163,12 +163,13 @@ export default function ProductPlacement() {
           selected === p.id ? (
             <div
               key={p.id}
+              dir={IsArabic ? "rtl" : "ltr"}
               id={`invoice-${p.id}`}
               style={{ top: p.invoicePos.top, left: p.invoicePos.left }}
               className="absolute shadow-lg w-48 dark:bg-black border 
-              border-neutral-800 rounded-xl p-4 text-left z-20"
+              border-neutral-800 rounded-xl p-4 z-20"
             >
-              <h3 className="font-semibold text-white mb-1">{t(p.label)}</h3>
+              <h3 className="font-semibold text-white mb-1">{t(p.labelKey)}</h3>
               <p>{t('sale_price')}: <span className="text-[#892CDC]">${p.price.toFixed(2)}</span></p>
             </div>
           ) : null

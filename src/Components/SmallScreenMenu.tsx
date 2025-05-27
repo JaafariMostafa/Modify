@@ -1,6 +1,6 @@
 'use client';
 import { ModeToggle } from '@/app/ModeToggle';
-import { Header_Navigation_Links } from '@/GlobalLinks';
+import { Header_Navigation_Links } from './Header';
 import { MenuIcon, X } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react'
 
