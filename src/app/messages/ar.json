@@ -30,5 +30,26 @@
                 "title": "أطلق مشروعك"
             }
         ]
+    },
+    "product_placement": {
+        "title": "أماكن الطباعة على المنتج",
+        "flip_button": "اقلب إلى ",
+        "flip_to_back_button_text": "الخلف",
+        "flip_to_front_button_text": "الأمام",
+        "sale_price": "السعر",
+        "placements": [
+            {
+                "label": "الواجهة"
+            },
+            {
+                "label": "ملصق العنق"
+            },
+            {
+                "label": "الكم الأيسر"
+            },
+            {
+                "label": "الكم الأيمن"
+            }
+        ]
     }
 }

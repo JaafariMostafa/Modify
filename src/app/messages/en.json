@@ -30,5 +30,26 @@
                 "title": "Launch"
             }
         ]
+    },
+    "product_placement": {
+        "title": "Printing places on the product",
+        "flip_button": "Flip to ",
+        "flip_to_front_button_text": "Front",
+        "flip_to_back_button_text": "Back",
+        "sale_price": "price",
+        "placements": [
+            {
+                "label": "Front"
+            },
+            {
+                "label": "Neck Label"
+            },
+            {
+                "label": "Left Sleeve"
+            },
+            {
+                "label": "Right Sleeve"
+            }
+        ]
     }
 }

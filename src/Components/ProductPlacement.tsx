@@ -1,12 +1,12 @@
 'use client';
-
 import { FlipHorizontal } from 'lucide-react';
 import { useState, useRef, useLayoutEffect } from 'react';
+import { useLocale, useTranslations } from "next-intl";
 
 const Front_Placements = [
   {
     id: 'front',
-    label: 'Front',
+    labelKey: 'placements.0.label',
     price: 5.99,
     top: '45%',
     left: '48%',
@@ -14,7 +14,7 @@ const Front_Placements = [
   },
   {
     id: 'necklabel',
-    label: 'Neck Label',
+    labelKey: 'placements.1.label',
     price: 4.99,
     top: '22%',
     left: '49%',
@@ -22,7 +22,7 @@ const Front_Placements = [
   },
   {
     id: 'leftSleeve',
-    label: 'Left Sleeve',
+    labelKey: 'placements.2.label',
     price: 2.99,
     top: '45%',
     left: '22%',
@@ -30,7 +30,7 @@ const Front_Placements = [
   },
   {
     id: 'rightSleeve',
-    label: 'Right Sleeve',
+    labelKey: 'placements.3.label',
     price: 2.99,
     top: '45%',
     left: '75%',
@@ -80,10 +80,14 @@ export default function ProductPlacement() {
   }, [selected]);
 
   const [IsFront, setIsFront] = useState(true);
+
+  const t = useTranslations('product_placement');
+  const locale = useLocale();
+  const IsArabic = locale === 'ar';
   return (
     <section className="w-full">
       <h2 className="text-2xl text-[#892CDC] dark:text-[#D9ACF5] font-semibold text-center pb-5">
-        Printing places on the product
+        {t('title')}
       </h2>
 
       <div className="relative w-full h-[500px] bg-neutral-300 rounded-xl shadow-lg" ref={containerRef}>
@@ -105,7 +109,7 @@ export default function ProductPlacement() {
           setSelected(null)
           setSvgPath('')
         }} className='absolute right-2 top-2 px-2 flex items-center gap-2 border border-neutral-800 bg-black rounded-lg'>
-          Flip to {IsFront ? "Back" : "Front"}<FlipHorizontal size={20}/>
+          {t('flip_button')} {IsFront ? t('flip_to_back_button_text') : t('flip_to_front_button_text')}<FlipHorizontal size={20}/>
         </button>
 
         {/* النقاط */}
@@ -145,13 +149,14 @@ export default function ProductPlacement() {
           selected === p.id ? (
             <div
               key={p.id}
+              dir={IsArabic ? "rtl" : "ltr"}
               id={`invoice-${p.id}`}
               style={{ top: p.invoicePos.top, left: p.invoicePos.left }}
-              className="absolute shadow-lg w-48 bg-black shadow-md border 
-              border-neutral-800 rounded-xl p-4 text-left z-20"
+              className="absolute shadow-lg w-48 bg-black border 
+              border-neutral-800 rounded-xl p-4 z-20"
             >
-              <h3 className="font-semibold text-white mb-1">{p.label}</h3>
-              <p>Price: <span className="text-[#892CDC]">${p.price.toFixed(2)}</span></p>
+              <h3 className="font-semibold text-white mb-1">{t(p.labelKey)}</h3>
+              <p>{t('sale_price')}: <span className="text-[#892CDC]">${p.price.toFixed(2)}</span></p>
             </div>
           ) : null
         ) : Back_Placements.map((p) =>
@@ -160,11 +165,11 @@ export default function ProductPlacement() {
               key={p.id}
               id={`invoice-${p.id}`}
               style={{ top: p.invoicePos.top, left: p.invoicePos.left }}
-              className="absolute shadow-lg w-48 dark:bg-black shadow-md border 
+              className="absolute shadow-lg w-48 dark:bg-black border 
               border-neutral-800 rounded-xl p-4 text-left z-20"
             >
-              <h3 className="font-semibold text-white mb-1">{p.label}</h3>
-              <p>Price: <span className="text-[#892CDC]">${p.price.toFixed(2)}</span></p>
+              <h3 className="font-semibold text-white mb-1">{t(p.label)}</h3>
+              <p>{t('sale_price')}: <span className="text-[#892CDC]">${p.price.toFixed(2)}</span></p>
             </div>
           ) : null
         )}
