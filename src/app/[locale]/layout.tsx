@@ -21,7 +21,7 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
-  title: 'My Print on Demand Platform',
+  title: 'Modify | My Print on Demand Platform',
   description: 'Build your brand easily with MODIFY.ma',
 }
 

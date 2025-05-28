@@ -3,6 +3,7 @@ import { ModeToggle } from '@/app/ModeToggle';
 import { Header_Navigation_Links } from './Header';
 import { MenuIcon, X } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react'
+import { useTranslations } from 'next-intl';
 
 export default function SmallScreenMenu() {
     const [IsOpen, setIsOpen] = useState(false);
@@ -18,6 +19,7 @@ export default function SmallScreenMenu() {
             document.removeEventListener('mousedown', handleClickOutside);
         };
     }, []);
+    const t = useTranslations();
     return (
         <main className='lg:hidden flex'>
             <MenuIcon 
@@ -50,22 +52,27 @@ export default function SmallScreenMenu() {
                             {Header_Navigation_Links.map((link, index) => (
                                 <a
                                     key={index}
+                                    onClick={() => setIsOpen(false)}
                                     href={"#" + (link.href.startsWith("/") ? link.href.slice(1) : link.href)}
-                                    className="text-sm w-full flex justify-center
+                                    className="text-sm w-full flex justify-center capitalize
                                         text-neutral-700 dark:text-neutral-300 
                                         hover:text-primary-500 dark:hover:text-primary-400 
                                         transition-colors duration-200 px-4 py-2 border-b
                                         border-neutral-200 dark:border-neutral-800
                                         hover:bg-neutral-100 dark:hover:bg-neutral-900/30"
                                 >
-                                    {link.name}
+                                    {t(link.name)}
                                 </a>
                             ))}
                         </ul>
                     </div>
-                    <div className='lg:hidden md:hidden sm:hidden w-full p-1 flex flex-col items-center justify-center gap-1'>
-                        <button className='py-2 w-full rounded-lg border text-sm bg-black/80 dark:bg-white dark:hover:bg-white/80 dark:text-black border-neutral-500 font-semibold'>Login</button>
-                        <button className='py-2 w-full rounded-lg border text-sm dark:text-white dark:hover:bg-white/20 border-neutral-500 text-black'>Register</button>
+                    <div className='p-1'>
+                        <button 
+                            className='py-2 w-full rounded-lg border text-sm 
+                            bg-black/80 dark:bg-white dark:hover:bg-white/80 
+                            dark:text-black border-neutral-500 font-semibold'>
+                                Login
+                        </button>
                     </div>
                 </section>
             </div>

@@ -13,12 +13,12 @@ export default function LoginForm() {
     const locale = useLocale();
     const IsArabic = locale === 'ar';
   return (
-    <main className='p-16 w-full plex flex-col justify-center items-center'>
+    <main className='lg:p-16 md:p-16 py-16 px-8 w-full max-w-[700px] flex flex-col justify-center lg:items-start'>
         <div className='fixed top-2 right-2 z-50 flex items-center gap-2'>
             <LanguageSwitcher />
             <ModeToggle />
         </div>
-        <Link href='/' className='flex items-center gap-2 text-[#892CDC]'>
+        <Link href='/' className='flex w-max items-center gap-2 text-[#892CDC]'>
             <span className='p-1 rounded-full dark:bg-neutral-900 border 
             dark:border-neutral-800'>
                 <Codesandbox size={22} />
@@ -27,9 +27,9 @@ export default function LoginForm() {
                     Modify
                 </h2>
         </Link>
-        <section className='p-10' dir={IsArabic ? "rtl" : "ltr"}>
+        <section className='py-12 sm:p-8 p-4' dir={IsArabic ? "rtl" : "ltr"}>
             <div className={` ${IsArabic ? "space-y-4" : ""}`}>
-                <h1 className='text-3xl font-semibold'>
+                <h1 className='text-3xl font-semibold dark:text-white text-neutral-800'>
                     {t('primary_title')} <span className='text-[#892CDC]'>{t('primary_title_marks')}</span>
                 </h1>
                 <p className='text-sm text-neutral-500'>
@@ -40,7 +40,7 @@ export default function LoginForm() {
                 <div className={`flex flex-col items-start ${IsArabic && "gap-2"}`}>
                     <label 
                         htmlFor="Email" 
-                        className='capitalize flex gap-1'>
+                        className='capitalize dark:text-white text-neutral-700 text-sm flex gap-1'>
                             {t('email_label')}
                             <span className='text-red-600'>
                                 *
@@ -50,13 +50,13 @@ export default function LoginForm() {
                         type="text" 
                         id='Email' 
                         placeholder={t('email_placeholder')}
-                        className='w-full border dark:border-neutral-800 rounded-lg p-2 bg-transparent'
+                        className='w-full border border-neutral-300 dark:text-white text-black dark:border-neutral-800 rounded-lg p-2 bg-transparent'
                         />
                 </div>
                 <div className={`flex flex-col items-start ${IsArabic && "gap-2"}`}>
                     <label 
                         htmlFor="Password"
-                        className='capitalize flex gap-1'>
+                        className='capitalize dark:text-white text-neutral-700 text-sm flex gap-1'>
                             {t('password_label')}
                             <span className='text-red-600'>
                                 *
@@ -66,7 +66,7 @@ export default function LoginForm() {
                         type="password" 
                         id='Password' 
                         placeholder={t('password_placeholder')}
-                        className='w-full border dark:border-neutral-800 rounded-lg p-2 bg-transparent'
+                        className='w-full border border-neutral-300 dark:text-white text-black dark:border-neutral-800 rounded-lg p-2 bg-transparent'
                         />
                 </div>
                 <button 
@@ -80,15 +80,19 @@ export default function LoginForm() {
             </form>
             <div>
                 <div className='w-full flex items-center gap-2'>
-                    <span className='w-full border-t border-neutral-800'></span>
-                    <span>{t('or')}</span>
-                    <span className='w-full border-t border-neutral-800'></span>
+                    <span className='w-full border-t border-neutral-400 dark:border-neutral-800'></span>
+                    <span className='dark:text-white text-neutral-800'>{t('or')}</span>
+                    <span className='w-full border-t border-neutral-400 dark:border-neutral-800'></span>
                 </div>
                 <div>
                     <button
                         type="button"
                         onClick={() => signIn('google')}
-                        className="w-full flex items-center justify-center gap-2 bg-white dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-700 rounded-lg py-2 mt-4 hover:shadow transition-colors"
+                        className="w-full flex items-center justify-center 
+                        gap-2 bg-white dark:bg-neutral-900 border 
+                        border-neutral-300 dark:border-neutral-700 rounded-lg 
+                        text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100
+                        py-2 mt-4 hover:shadow transition-colors"
                     >
                         <img 
                         src='/GoogleIcon.png'
