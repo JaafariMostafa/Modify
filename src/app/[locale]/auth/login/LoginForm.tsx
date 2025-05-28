@@ -95,8 +95,8 @@ export default function LoginForm() {
                         py-2 mt-4 hover:shadow transition-colors"
                     >
                         <img 
-                        src='/GoogleIcon.png'
-                        width={20}
+                            src='/GoogleIcon.png'
+                            width={20}
                         />
                         {t('login_with_google_provider')}
                     </button>
