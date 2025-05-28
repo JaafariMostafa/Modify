@@ -5,6 +5,7 @@ import { Codesandbox } from 'lucide-react';
 import React from 'react'
 import { useLocale, useTranslations } from "next-intl";
 import Link from 'next/link';
+import { signIn } from 'next-auth/react';
 
 
 export default function LoginForm() {
@@ -86,6 +87,7 @@ export default function LoginForm() {
                 <div>
                     <button
                         type="button"
+                        onClick={() => signIn('google')}
                         className="w-full flex items-center justify-center gap-2 bg-white dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-700 rounded-lg py-2 mt-4 hover:shadow transition-colors"
                     >
                         <img 

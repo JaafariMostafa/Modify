@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { getMessages } from "next-intl/server";
+import { SessionProvider } from "next-auth/react";
 
 const ubuntu = Ubuntu({
   subsets: ['latin'],
@@ -44,16 +45,18 @@ export default async function RootLayout({
           bg-white dark:bg-[#0a0a0a] 
           ${IsArabic ? cairo.className : ubuntu.className} antialiased`}
       >
-        <ThemeProvider 
-          attribute="class" 
-          enableSystem 
-          defaultTheme="system"
-        >
-          <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
-          </NextIntlClientProvider>
-        </ThemeProvider>
-        <ScrollToTop />
+        <SessionProvider>
+          <ThemeProvider 
+            attribute="class" 
+            enableSystem 
+            defaultTheme="system"
+            >
+            <NextIntlClientProvider locale={locale} messages={messages}>
+              {children}
+            </NextIntlClientProvider>
+          </ThemeProvider>
+          <ScrollToTop />
+        </SessionProvider>
       </body>
     </html>
   );
