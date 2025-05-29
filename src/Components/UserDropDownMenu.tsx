@@ -1,5 +1,6 @@
 'use client';
 import { UserIcon, LogIn, UserPlus } from 'lucide-react';
+import { useSession } from 'next-auth/react';
 import Link from 'next/link';
 import React, { useRef, useEffect } from 'react';
 
@@ -32,6 +33,7 @@ export default function UserDropDownMenu() {
         };
     }, [isOpen]);
 
+    const session = useSession();
     return (
         <div className='relative hidden sm:block'>
             <button
@@ -53,29 +55,58 @@ export default function UserDropDownMenu() {
                              border-gray-200 
                              overflow-hidden z-50"
                 >
-                    <Link
-                        href="/auth/login"
-                        onClick={() => setIsOpen(false)}
-                        className="flex items-center gap-2 px-3 py-2 
-                                 text-sm text-gray-700 dark:text-gray-300 hover:text-white
-                                 hover:bg-[#892CDC] dark:hover:bg-neutral-800 
-                                 transition-colors"
-                    >
-                        <LogIn className="w-4 h-4" />
-                        Login
-                    </Link>
-                    <Link
-                        href="/auth/register"
-                        onClick={() => setIsOpen(false)}
-                        className="flex items-center gap-2 px-3 py-2 
-                                 text-sm text-gray-700 dark:text-gray-300 
-                                 dark:hover:bg-neutral-800 
-                                 hover:bg-[#892CDC] hover:text-white
-                                 transition-colors"
-                    >
-                        <UserPlus className="w-4 h-4" />
-                        Register
-                    </Link>
+                    {session.status === 'authenticated' ? (
+                        <>
+                            <Link
+                                href="/profile"
+                                onClick={() => setIsOpen(false)}
+                                className="flex items-center gap-2 px-3 py-2 
+                                         text-sm text-gray-700 dark:text-gray-300 hover:text-white
+                                         hover:bg-[#892CDC] dark:hover:bg-neutral-800 
+                                         transition-colors"
+                            >
+                                <UserIcon className="w-4 h-4" />
+                                Profile
+                            </Link>
+                            <Link
+                                href="/auth/logout"
+                                onClick={() => setIsOpen(false)}
+                                className="flex items-center gap-2 px-3 py-2 
+                                         text-sm text-gray-700 dark:text-gray-300 hover:text-white
+                                         hover:bg-[#892CDC] dark:hover:bg-neutral-800 
+                                         transition-colors"
+                            >
+                                <LogIn className="w-4 h-4" />
+                                Logout
+                            </Link>
+                        </>
+                    ) : (
+                        <>
+                            <Link
+                                href="/auth/login"
+                                onClick={() => setIsOpen(false)}
+                                className="flex items-center gap-2 px-3 py-2 
+                                        text-sm text-gray-700 dark:text-gray-300 hover:text-white
+                                        hover:bg-[#892CDC] dark:hover:bg-neutral-800 
+                                        transition-colors"
+                            >
+                                <LogIn className="w-4 h-4" />
+                                Login
+                            </Link>
+                            <Link
+                                href="/auth/register"
+                                onClick={() => setIsOpen(false)}
+                                className="flex items-center gap-2 px-3 py-2 
+                                        text-sm text-gray-700 dark:text-gray-300 
+                                        dark:hover:bg-neutral-800 
+                                        hover:bg-[#892CDC] hover:text-white
+                                        transition-colors"
+                            >
+                                <UserPlus className="w-4 h-4" />
+                                Register
+                            </Link>
+                        </>
+                    )}
                 </div>
             )}
         </div>

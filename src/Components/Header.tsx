@@ -39,17 +39,6 @@ export default async function Header(){
             <section className="flex items-center gap-4">
                 <SearchProducts />
                 <UserDropDownMenu />
-                {/* <select
-                    className="rounded-lg border border-neutral-400 bg-neutral-200 bg-transparent 
-                        py-2 px-4 text-sm focus:outline-none
-                        dark:bg-neutral-900 primary-color dark:text-white cursor-pointer
-                        dark:border-neutral-600"
-                    defaultValue="English"
-                >
-                    <option value="العربية">العربية</option>
-                    <option value="English">English</option>
-                    <option value="French">French</option>
-                </select> */}
                 <LanguageSwitcher />
                 <div className="lg:flex hidden">
                     <ModeToggle />
