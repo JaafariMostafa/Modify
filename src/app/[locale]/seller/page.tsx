@@ -39,7 +39,9 @@ export default async function Page(){
                 </div>
                 <div className="w-full grid grid-cols-3 gap-2 py-4">
                     <TotalGainCard />
-                    <div className="col-span-2 rounded-lg shadow-md border border-neutral-300 dark:border-neutral-800">
+                    <div 
+                        className="col-span-2 rounded-lg shadow-md border 
+                            border-neutral-200 dark:border-neutral-800">
                         <div className="w-full flex">
                             <TotalOrders />
                             <TotalTemplates />

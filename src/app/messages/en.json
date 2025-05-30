@@ -10,6 +10,14 @@
             "href": "pricing"
         }
     ],
+    "user_dropdown_menu": [
+        { "label": "Profile" },
+        { "label": "Dashboard" },
+        { "label": "My Orders" },
+        { "label": "Settings" },
+        { "label": "Support" },
+        { "label": "Logout" }
+    ],
     "hero": {
         "printOnDemandPremium": "Premium Print On Demand",
         "hero_title": "Turn ideas into thriving ",

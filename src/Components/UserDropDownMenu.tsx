@@ -4,32 +4,33 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useRef, useEffect } from 'react';
 import { UserIcon, LogIn, UserPlus, LayoutDashboard, ShoppingBag, Settings, LifeBuoy } from 'lucide-react';
+import { useLocale, useTranslations } from 'next-intl';
 
 
 
 const Authenticated_User_Links = [
     {
-        label: 'Profile',
+        label: 'user_dropdown_menu.0.label',
         href: '/profile',
         icon: <UserIcon className="w-4 h-4" />
     },
     {
-        label: 'Dashboard',
+        label: 'user_dropdown_menu.1.label',
         href: '/dashboard',
         icon: <LayoutDashboard className="w-4 h-4" />
     },
     {
-        label: 'My Orders',
+        label: 'user_dropdown_menu.2.label',
         href: '/myorders',
         icon: <ShoppingBag className="w-4 h-4" />
     },
     {
-        label: 'Settings',
+        label: 'user_dropdown_menu.3.label',
         href: '/settings',
         icon: <Settings className="w-4 h-4" />
     },
     {
-        label: 'Support',
+        label: 'user_dropdown_menu.4.label',
         href: '/support',
         icon: <LifeBuoy className="w-4 h-4" />
     }
@@ -64,6 +65,9 @@ export default function UserDropDownMenu() {
     }, [isOpen]);
 
     const session = useSession();
+    const t = useTranslations();
+    const locale = useLocale();
+    const IsArabic = locale === 'ar';
     return (
         <div className='relative hidden sm:block'>
             <button
@@ -87,7 +91,7 @@ export default function UserDropDownMenu() {
                 >
                     {session.status === 'authenticated' ? (
                         <>
-                        <div className='flex items-center gap-2 px-3 py-2'>
+                        <div dir={IsArabic ? 'rtl' : 'ltr'} className='flex items-center gap-2 px-3 py-2'>
                             <div className='relative w-10 h-10 rounded-full overflow-hidden border dark:border-white'>
                                 {session?.data?.user?.image && (
                                     <Image
@@ -99,15 +103,15 @@ export default function UserDropDownMenu() {
                                 )}
                             </div>
                             <span className=''>
-                                <h1 className='text-sm'>
+                                <h1 className='text-sm text-neutral-700 dark:text-neutral-200'>
                                     {session?.data?.user?.name}
                                 </h1>
-                                <p className='text-xs text-gray-500 dark:text-gray-400'>
+                                <p className='text-xs text-gray-400 dark:text-gray-400'>
                                     {session?.data?.user?.email}
                                 </p>
                             </span>
                         </div>
-                        <ul>
+                        <ul dir={IsArabic ? 'rtl' : 'ltr'}>
                             {Authenticated_User_Links.map((link, index) => {
                                 return (
                                     <Link 
@@ -115,12 +119,13 @@ export default function UserDropDownMenu() {
                                         href={link.href}
                                         onClick={() => setIsOpen(false)}
                                         className="flex items-center gap-2 px-3 py-2
-                                            text-sm text-gray-700 dark:text-gray-300 hover:text-white
-                                            hover:bg-[#892CDC] dark:hover:bg-neutral-800
+                                            text-sm text-gray-700 dark:text-gray-300
+                                            hover:bg-[#892CDC]/20 hover:text-[#892CDC] 
+                                            hover:font-semibold dark:hover:bg-neutral-800
                                             transition-colors border-t dark:border-neutral-800"
                                     >
                                         {link.icon}
-                                        {link.label}
+                                        {t(link.label)}
                                     </Link>
                                 )
                             })}
@@ -131,7 +136,7 @@ export default function UserDropDownMenu() {
                                 onClick={() => signOut({ callbackUrl: '/' })}
                             >
                                 <LogIn className="w-4 h-4 rotate-180" />
-                                Logout
+                                {t('user_dropdown_menu.5.label')}
                             </button>
                         </ul>
                         </>

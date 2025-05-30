@@ -8,7 +8,9 @@ export default function TotalGainCard(){
     const locale = useLocale();
     const IsArabic = locale === 'ar';
     return (
-        <main className="col-span-1 border border-neutral-300 dark:border-neutral-800 rounded-lg p-4 shadow-md">
+        <main 
+            className="col-span-1 border border-neutral-200 
+                dark:border-neutral-800 rounded-lg p-4 shadow-md">
             <span 
                 dir={IsArabic ? 'rtl' : 'ltr'}
                 className="w-full flex items-start justify-between">

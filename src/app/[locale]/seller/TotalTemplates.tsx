@@ -11,7 +11,7 @@ export default function TotalTemplates(){
         const IsArabic = locale === 'ar';
     return (
         <main 
-            className="grow border-l border-neutral-300 
+            className="grow border-l border-neutral-200 
             dark:border-neutral-800">
             <section className="p-4">
                 <span 
@@ -50,7 +50,7 @@ export default function TotalTemplates(){
                 <button 
                     className="w-full flex items-center gap-2 justify-center text-[#892CDC] border-t 
                         px-4 py-2 hover:text-[#7a24b0] 
-                        dark:border-neutral-800 transition-colors">
+                        dark:border-neutral-800 border-neutral-200 transition-colors">
                     {t('view_details')} <ArrowRight size={16} />
                 </button>
             </div>

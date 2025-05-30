@@ -50,7 +50,8 @@ export default function TotalOrders(){
                         className="w-full text-[#892CDC] border-t 
                             flex items-center gap-2 justify-center
                             px-4 py-2 hover:text-[#7a24b0] 
-                            dark:border-neutral-800 transition-colors">
+                            dark:border-neutral-800 border-neutral-200 
+                            transition-colors">
                         {t('view_details')} <ArrowRight size={16} />
                     </button>
                 </div>
