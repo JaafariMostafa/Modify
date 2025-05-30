@@ -94,5 +94,45 @@
         "login_button": "تسجيل الدخول",
         "or":"أو",
         "login_with_google_provider": "تسجيل الدخول باستخدام جوجل"
+    },
+    "dashboard_seller_page": {
+        "sidebar": {
+            "general_links": {
+                "primary_title": "عام",
+                "general_labels": [
+                    {
+                        "label": "لوحة التحكم"
+                    },
+                    {
+                        "label": "الإحصائيات"
+                    }
+                ]
+            },
+            "shop_links": {
+                "primary_title": "المتجر",
+                "shop_labels": [
+                    {
+                        "label": "الطلبات"
+                    },
+                    {
+                        "label": "قوالبي"
+                    },
+                    {
+                        "label": "الإشعارات"
+                    }
+                ]
+            },
+            "support_links": {
+                "primary_title": "الدعم",
+                "support_labels": [
+                    {
+                        "label": "الإعدادات"
+                    },
+                    {
+                        "label": "مساعدة"
+                    }
+                ]
+            }
+        }
     }
 }

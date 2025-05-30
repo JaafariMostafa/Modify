@@ -94,5 +94,44 @@
         "login_button": "login",
         "or":"Or",
         "login_with_google_provider": "Login with Google"
+    },
+    "dashboard_seller_page": {
+        "sidebar": {
+            "general_links": {
+                "primary_title": "general",
+                "general_labels": [
+                    {
+                        "label": "dashboard"
+                    },
+                    {
+                        "label": "statistics"
+                    }
+                ]
+            },
+            "shop_links": {
+                "primary_title": "shop",
+                "shop_labels": [
+                    {
+                        "label": "orders"
+                    },
+                    {
+                        "label": "my templates"
+                    },
+                    {
+                        "label": "notifications"
+                    }
+                ]
+            },"support_links": {
+                "primary_title": "support",
+                "support_labels": [
+                    {
+                        "label": "settings"
+                    },
+                    {
+                        "label": "help"
+                    }
+                ]
+            }
+        }
     }
 }
