@@ -3,8 +3,9 @@ import HeaderSeller from "./SellerHeader";
 import TotalGainCard from "@/Components/TotalGainCard";
 import TotalOrders from "./TotalOrders";
 import TotalTemplates from "./TotalTemplates";
-import SellerTable from "./SellerTable";
+// import SellerTable from "./SellerTable";
 import { getLocale, getTranslations } from "next-intl/server";
+import SalesBarChart from "@/Components/SalesBarChart";
 
 
 
@@ -48,7 +49,10 @@ export default async function Page(){
                         </div>
                     </div>
                 </div>
-                <SellerTable />
+                {/* <SellerTable /> */}
+                {/* <div className="w-1/3">
+                    <SalesBarChart />
+                </div> */}
             </section>
         </main>
     )

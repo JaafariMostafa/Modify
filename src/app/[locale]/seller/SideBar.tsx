@@ -2,6 +2,7 @@
 import { Box, ChartNoAxesCombined, Codesandbox, Home, MessageCircleQuestion, MessagesSquare, NotepadTextDashed, Settings } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 
 // ------ Generals
@@ -45,7 +46,9 @@ const Support_Links = [
     },
 ];
 export default function SideBar(){
-
+    const pathname = usePathname();
+    const segments = pathname.split('/').filter(Boolean);
+    const CurrentPage = segments[segments.length - 1];
     const t = useTranslations('dashboard_seller_page');
     const locale = useLocale();
     const IsArabic = locale === 'ar';
@@ -64,13 +67,14 @@ export default function SideBar(){
                             dark:text-neutral-600 text-neutral-400">
                                 {t('sidebar.general_links.primary_title')} <hr className="w-full dark:border-neutral-900" />
                     </h4>
-                    <ul>
+                    <ul className="space-y-1">
                         {General_Links.map((link, index) => {
                             return (
                                 <li 
                                 key={index} 
-                                className="capitalize px-4 py-2 rounded-lg dark:text-neutral-400 text-neutral-600 hover:bg-neutral-200 dark:hover:bg-neutral-800 
-                                        flex items-center gap-2 transition-colors">
+                                className={`capitalize px-4 py-2 rounded-lg 
+                                        flex items-center gap-2 transition-colors
+                                        ${CurrentPage === link.href.split('/').pop() ? 'bg-[#892CDC]/20 text-[#892CDC] border border-[#892CDC]/20 cursor-default' : 'dark:text-neutral-400 hover:text-[#892CDC] text-neutral-600 cursor-pointer hover:bg-[#892CDC]/10'}`}>
                                     <link.icon size={25} /> {t(link.label)}
                                 </li>
                             )
@@ -87,11 +91,12 @@ export default function SideBar(){
                             return (
                                 <li 
                                 key={index} 
-                                className="relative capitalize px-4 py-2 rounded-lg dark:text-neutral-400 text-neutral-600 hover:bg-neutral-200 dark:hover:bg-neutral-800 
-                                flex items-center gap-2 transition-colors">
-                                    <link.icon size={25} /> {t(link.label)} {link.label.toLowerCase() === 'notifications' && (
+                                className={`relative capitalize px-4 py-2 rounded-lg 
+                                    flex items-center gap-2 transition-colors
+                                    ${CurrentPage === link.href.split('/').pop() ? 'bg-[#892CDC]/20 text-[#892CDC] border border-[#892CDC]/20 cursor-default' : 'dark:text-neutral-400 hover:text-[#892CDC] text-neutral-600 cursor-pointer hover:bg-[#892CDC]/10'}`}>
+                                    <link.icon size={25} /> {t(link.label)} {index === 2 && (
                                         <span 
-                                        className="absolute right-2 text-sm px-2 py-0.5
+                                        className="absolute z-20 right-2 text-sm px-2 py-0.5
                                                 rounded border dark:border-neutral-800 
                                                 border-[#892CDC] bg-[#892CDC]/30 
                                                 dark:bg-neutral-900/60 dark:text-neutral-400 text-[#892CDC]">
@@ -113,8 +118,9 @@ export default function SideBar(){
                             return (
                                 <li 
                                 key={index} 
-                                className="capitalize px-4 py-2 rounded-lg dark:text-neutral-400 text-neutral-600 hover:bg-neutral-200 dark:hover:bg-neutral-800 
-                                        flex items-center gap-2 transition-colors">
+                                className={`capitalize px-4 py-2 rounded-lg 
+                                        flex items-center gap-2 transition-colors
+                                        ${CurrentPage === link.href.split('/').pop() ? 'bg-[#892CDC]/20 text-[#892CDC] border border-[#892CDC]/20 cursor-default' : 'dark:text-neutral-400 hover:text-[#892CDC] text-neutral-600 cursor-pointer hover:bg-[#892CDC]/10'}`}>
                                     <link.icon size={25} /> {t(link.label)}
                                 </li>
                             )
