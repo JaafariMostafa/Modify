@@ -134,5 +134,25 @@
                 ]
             }
         }
+    },
+    "dashboard_seller_page_content": {
+        "title": "لوحة التحكم",
+        "description": "مرحبًا بك في لوحة تحكم البائع! هنا يمكنك إدارة أرباحك.",
+        "cta_button": "أضف القوالب",
+        "dashboard_cards": {
+            "total_gain_card": {
+                "total_gain_title": "إجمالي الأرباح",
+                "total_gain_description": "هذا هو إجمالي أرباحك من جميع المبيعات.",
+                "currency": "درهم",
+                "view_details": "عرض التفاصيل",
+                "filter": {
+                    "today": "اليوم",
+                    "this_week": "هذا الأسبوع",
+                    "this_month": "هذا الشهر",
+                    "this_year": "هذه السنة",
+                    "all_time": "كل الوقت"
+                }
+            }
+        }
     }
 }

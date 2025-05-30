@@ -4,24 +4,29 @@ import TotalGainCard from "@/Components/TotalGainCard";
 import TotalOrders from "./TotalOrders";
 import TotalTemplates from "./TotalTemplates";
 import SellerTable from "./SellerTable";
+import { getLocale, getTranslations } from "next-intl/server";
 
 
 
-export default function Page(){
+export default async function Page(){
+    const t = await getTranslations('dashboard_seller_page_content');
+    const locale = await getLocale();
+    const IsArabic = locale === 'ar';
     return (
         <main className="w-full min-h-screen rounded-lg dark:bg-neutral-900 border dark:border-neutral-800">
             <HeaderSeller />
             <section className="p-4">
-                <div className="w-full flex justify-between items-center">
+                <div 
+                    dir={IsArabic ? 'rtl' : 'ltr'}
+                    className="w-full flex justify-between items-center">
                     <span>
                         <h1 
-                            className="text-2xl font-bold 
+                            className="text-2xl font-bold capitalize
                                 text-[#892CDC] dark:text-white">
-                            Dashboard
+                            {t('title')}
                         </h1>
                         <p className='text-sm dark:text-neutral-500 text-neutral-400'>
-                                Welcome to your seller dashboard! 
-                                Here you can manage your profits.
+                               {t('description')}
                         </p>
                     </span>
                     <button 
@@ -29,7 +34,7 @@ export default function Page(){
                             bg-[#892CDC] text-white px-4 
                             py-2 rounded-lg hover:bg-[#7a24b0] 
                             text-sm transition-colors mt-4">
-                        <Plus size={16}/> Add Templates
+                        <Plus size={16}/> {t('cta_button')}
                     </button>
                 </div>
                 <div className="w-full grid grid-cols-3 gap-2 py-4">

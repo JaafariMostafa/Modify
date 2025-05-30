@@ -133,5 +133,25 @@
                 ]
             }
         }
-    }
+    },
+    "dashboard_seller_page_content": {
+        "title": "dashboard",
+        "description": "Welcome to your seller dashboard! Here you can manage your profits.",
+        "cta_button": "add templates",
+        "dashboard_cards": {
+            "total_gain_card": {
+                "total_gain_title": "Total Gain",
+                "total_gain_description": "This is your total gain from all sales.",
+                "currency": "Dh",
+                "view_details": "View Details",
+                "filter": {
+                    "today": "Today",
+                    "this_week": "This Week",
+                    "this_month": "This Month",
+                    "this_year": "This Year",
+                    "all_time": "All Time"
+                }
+            }
+        }
+}
 }
