@@ -1,28 +1,10 @@
-'use client';
 import { ArrowUpRight, Star } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
-import Image from "next/image";
-import { useEffect, useState } from "react";
+import CTAButton from "./CTAButton";
+import ImageCarousel from "./useImageCarousel";
 
 export default function HeroSection() {
-    const images = [
-        "https://images.pexels.com/photos/15127553/pexels-photo-15127553/free-photo-of-a-man-in-a-white-hoodie-and-sunglasses.jpeg?auto=compress&cs=tinysrgb&w=600",
-        "https://images.pexels.com/photos/26447865/pexels-photo-26447865/free-photo-of-man-standing-in-t-shirt-and-cap.jpeg?auto=compress&cs=tinysrgb&w=600",
-        "https://images.pexels.com/photos/3399996/pexels-photo-3399996.jpeg?auto=compress&cs=tinysrgb&w=600"
-    ];
-
-    function useImageCarousel(imgs: string[], interval = 10000) {
-        const [index, setIndex] = useState(0);
-        useEffect(() => {
-            const timer = setInterval(() => {
-                setIndex((prev) => (prev + 1) % imgs.length);
-            }, interval);
-            return () => clearInterval(timer);
-        }, [imgs, interval]);
-        return imgs[index];
-    }
-
-    const currentImage = useImageCarousel(images);
+    
     const t = useTranslations('hero');
     const locale = useLocale();
     const IsArabic = locale === 'ar';
@@ -53,12 +35,7 @@ export default function HeroSection() {
                     <div 
                         className="py-6 flex flex-col w-full lg:flex-row md:flex-row 
                             sm:flex-row gap-2 lg:items-start md:items-start items-center Fade-In">
-                        <button
-                            className="flex bg-[#892CDC] hover:bg-[#892CDC]/90
-                                transition-all duration-200 items-center gap-2 
-                                py-2 px-6 rounded-lg text-white border border-[#892CDC]">
-                            {t('hero_cta_button')} <ArrowUpRight className={` ${Rotate_Icon}`} size={20} />
-                        </button>
+                        <CTAButton />
                         <button
                             className="flex bg-transparent hover:bg-[#892CDC]/10 dark:bg-neutral-900 dark:hover:bg-neutral-900/10 
                                 transition-all duration-200 items-center gap-2 py-2 text-[#892CDC] dark:text-neutral-300
@@ -68,17 +45,7 @@ export default function HeroSection() {
                     </div>
                 </div>
                 {/* Right: Product Image */}
-
-                <div className="lg:block md:block sm:block hidden w-[400px] h-[60vh] shadow relative overflow-hidden rounded-lg">
-                    {/* Product Image */}
-                    <Image 
-                        src={currentImage}
-                        alt="Product"
-                        fill
-                        className="object-cover Fade-In-Image"
-                        key={currentImage}
-                    />
-                </div>
+                <ImageCarousel />
             </section>
         </main>
     );
