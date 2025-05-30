@@ -78,7 +78,7 @@ export default function UserDropDownMenu() {
             {isOpen && (
                 <div
                     ref={menuRef}
-                    className="absolute top-full right-0 mt-2 min-w-40 
+                    className="absolute top-11 right-0 mt-2 min-w-40 
                         bg-white dark:bg-black 
                         rounded-lg shadow-lg border 
                         dark:border-neutral-800
