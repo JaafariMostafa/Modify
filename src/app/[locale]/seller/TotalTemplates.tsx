@@ -15,7 +15,10 @@ export default function TotalTemplates(){
                         Total Templates <Info size={16} />
                     </h2>
                     <select 
-                        className="text-sm py-1 px-2 border border-neutral-800 bg-transparent rounded"
+                        className="text-sm py-1 px-2 border 
+                            dark:border-neutral-800 
+                            text-neutral-600 dark:text-neutral-600 
+                            bg-transparent rounded"
                         name="" 
                         id=""
                         >
@@ -37,7 +40,7 @@ export default function TotalTemplates(){
                 <button 
                     className="w-full flex items-center gap-2 justify-center text-[#892CDC] border-t 
                         px-4 py-2 hover:text-[#7a24b0] 
-                        border-neutral-800 transition-colors">
+                        dark:border-neutral-800 transition-colors">
                     View Details <ArrowRight size={16} />
                 </button>
             </div>

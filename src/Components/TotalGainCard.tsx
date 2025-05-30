@@ -12,7 +12,10 @@ export default function TotalGainCard(){
                     Total Gain <Info size={16} />
                 </h2>
                 <select 
-                    className="text-sm py-1 px-2 border border-neutral-800 bg-transparent rounded"
+                    className="text-sm py-1 px-2 border 
+                        dark:border-neutral-800 
+                        text-neutral-600 dark:text-neutral-600 
+                        bg-transparent rounded"
                     name="" 
                     id=""
                     >

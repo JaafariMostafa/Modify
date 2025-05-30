@@ -13,10 +13,12 @@ export default function Page(){
             <section className="p-4">
                 <div className="w-full flex justify-between items-center">
                     <span>
-                        <h1 className="text-2xl font-bold text-neutral-800 dark:text-white">
+                        <h1 
+                            className="text-2xl font-bold 
+                                text-[#892CDC] dark:text-white">
                             Dashboard
                         </h1>
-                        <p className='text-sm text-neutral-500'>
+                        <p className='text-sm dark:text-neutral-500 text-neutral-400'>
                                 Welcome to your seller dashboard! 
                                 Here you can manage your profits.
                         </p>
