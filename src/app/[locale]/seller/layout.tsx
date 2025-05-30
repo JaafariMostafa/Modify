@@ -25,7 +25,9 @@ export default async function Layout({ children, params }: { children: React.Rea
         <main className={`${IsArabic ? cairo.className : ubuntu.className} antialiased`}>
             <section className="w-full min-h-screen flex">
                 <SideBar />
-                {children}
+                <div className="p-4 w-full">
+                    {children}
+                </div>
             </section>
             <footer className="bg-gray-800 text-white p-4 text-center">
                 © 2023 Your Company
