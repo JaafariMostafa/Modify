@@ -8,7 +8,7 @@ export default function TotalTemplates(){
     return (
         <main 
             className="grow border-l border-neutral-300 
-            dark:border-neutral-800 shadow-md">
+            dark:border-neutral-800">
             <section className="p-4">
                 <span className="w-full flex items-start justify-between">
                     <h2 className="flex items-center gap-2 text-neutral-800 dark:text-neutral-500 mb-4">

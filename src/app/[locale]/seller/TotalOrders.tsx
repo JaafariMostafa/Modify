@@ -7,7 +7,7 @@ import { ArrowRight, Info } from "lucide-react";
 export default function TotalOrders(){
     return (
         <main 
-            className="grow shadow-md">
+            className="grow">
             <section className="p-4">
                 <span className="w-full flex items-start justify-between">
                     <h2 className="flex items-center gap-2 text-neutral-800 dark:text-neutral-500 mb-4">

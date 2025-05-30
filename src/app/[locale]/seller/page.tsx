@@ -3,6 +3,7 @@ import HeaderSeller from "./SellerHeader";
 import TotalGainCard from "@/Components/TotalGainCard";
 import TotalOrders from "./TotalOrders";
 import TotalTemplates from "./TotalTemplates";
+import SellerTable from "./SellerTable";
 
 
 
@@ -33,13 +34,14 @@ export default function Page(){
                 </div>
                 <div className="w-full grid grid-cols-3 gap-2 py-4">
                     <TotalGainCard />
-                    <div className="col-span-2 rounded-lg border border-neutral-300 dark:border-neutral-800">
+                    <div className="col-span-2 rounded-lg shadow-md border border-neutral-300 dark:border-neutral-800">
                         <div className="w-full flex">
                             <TotalOrders />
                             <TotalTemplates />
                         </div>
                     </div>
                 </div>
+                <SellerTable />
             </section>
         </main>
     )
