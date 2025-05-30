@@ -152,6 +152,19 @@
                     "this_year": "هذه السنة",
                     "all_time": "كل الوقت"
                 }
+            },
+            "total_orders_card": {
+                "total_orders_title": "إجمالي الطلبات",
+                "total_orders_description": "هذه هي حالة طلباتك.",
+                "order_label": "طلب",
+                "view_details": "عرض التفاصيل",
+                "filter": {
+                    "total": "الإجمالي",
+                    "pending": "قيد الانتظار",
+                    "confirmed": "تم التأكيد",
+                    "delivered": "تم التسليم",
+                    "canceled": "ملغى"
+                }
             }
         }
     }

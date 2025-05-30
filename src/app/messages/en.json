@@ -151,7 +151,20 @@
                     "this_year": "This Year",
                     "all_time": "All Time"
                 }
-            }
+            },
+            "total_orders_card": {
+                "total_orders_title": "Total Orders",
+                "total_orders_description": "This is your orders status.",
+                "order_label": "Order",
+                "view_details": "View Details",
+                "filter": {
+                "total": "Total",
+                "pending": "Pending",
+                "confirmed": "Confirmed",
+                "delivered": "Delivered",
+                "canceled": "Canceled"
+                    }
+                }
         }
 }
 }
