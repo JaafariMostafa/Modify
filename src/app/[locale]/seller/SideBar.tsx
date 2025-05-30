@@ -75,9 +75,15 @@ export default function SideBar(){
                         return (
                             <li 
                             key={index} 
-                            className="px-4 py-2 rounded-lg text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-800 
+                            className="relative px-4 py-2 rounded-lg text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-800 
                                     flex items-center gap-2 transition-colors">
-                                <link.icon size={25} /> {link.label}
+                                <link.icon size={25} /> {link.label} {link.label.toLowerCase() === 'notifications' && (
+                                    <span 
+                                        className="absolute right-2 text-sm px-2 py-0.5
+                                            rounded border border-neutral-800 bg-neutral-900/60">
+                                                0
+                                    </span>
+                                )}
                             </li>
                         )
                     })}
