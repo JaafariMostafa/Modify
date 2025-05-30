@@ -59,9 +59,9 @@ export default function SideBar(){
             <section dir={IsArabic ? 'rtl' : 'ltr'}>
                 <nav className="p-4 space-y-2">
                     <h4 
-                        className="text-xs uppercase 
+                        className="text-xs uppercase flex items-center gap-2
                             dark:text-neutral-600 text-neutral-400">
-                                {t('sidebar.general_links.primary_title')}
+                                {t('sidebar.general_links.primary_title')} <hr className="w-full border-neutral-900" />
                     </h4>
                     <ul>
                         {General_Links.map((link, index) => {
@@ -78,8 +78,8 @@ export default function SideBar(){
                 </nav>
                 <nav className="px-4 space-y-2">
                     <h4 className="text-xs uppercase dark:text-neutral-600 
-                    text-neutral-400">
-                        {t('sidebar.shop_links.primary_title')}
+                    text-neutral-400  flex items-center gap-2">
+                        {t('sidebar.shop_links.primary_title')} <hr className="w-full border-neutral-900" />
                     </h4>
                     <ul>
                         {Shop_Links.map((link, index) => {
@@ -104,8 +104,8 @@ export default function SideBar(){
                 </nav>
                 <nav className="p-4 space-y-2">
                     <h4 className="text-xs uppercase dark:text-neutral-600 
-                    text-neutral-400">
-                        {t('sidebar.support_links.primary_title')}
+                    text-neutral-400 flex items-center gap-2">
+                        {t('sidebar.support_links.primary_title')}  <hr className="w-full border-neutral-900" />
                     </h4>
                     <ul>
                         {Support_Links.map((link, index) => {

@@ -164,7 +164,20 @@
                 "delivered": "Delivered",
                 "canceled": "Canceled"
                     }
+            },
+            "total_templates_card": {
+                "total_templates_title": "Total Templates",
+                "total_templates_description": "This is your availables templates.",
+                "template_label": "Template",
+                "view_details": "View Details",
+                "filter": {
+                    "today": "Today",
+                    "this_week": "This Week",
+                    "this_month": "This Month",
+                    "this_year": "This Year",
+                    "all_time": "All Time"
                 }
+            }
         }
 }
 }

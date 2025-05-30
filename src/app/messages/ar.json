@@ -165,6 +165,19 @@
                     "delivered": "تم التسليم",
                     "canceled": "ملغى"
                 }
+            },
+            "total_templates_card": {
+                "total_templates_title": "إجمالي القوالب",
+                "total_templates_description": "هذه هي القوالب المتاحة لديك.",
+                "template_label": "قالب",
+                "view_details": "عرض التفاصيل",
+                "filter": {
+                    "today": "اليوم",
+                    "this_week": "هذا الأسبوع",
+                    "this_month": "هذا الشهر",
+                    "this_year": "هذه السنة",
+                    "all_time": "كل الوقت"
+                }
             }
         }
     }

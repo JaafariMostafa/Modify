@@ -19,7 +19,7 @@ export default async function Page(){
                 <div 
                     dir={IsArabic ? 'rtl' : 'ltr'}
                     className="w-full flex justify-between items-center">
-                    <span>
+                    <span className="space-y-2">
                         <h1 
                             className="text-2xl font-bold capitalize
                                 text-[#892CDC] dark:text-white">
