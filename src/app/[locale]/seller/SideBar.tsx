@@ -1,5 +1,5 @@
 'use client';
-import { Box, ChartNoAxesCombined, Codesandbox, Home, MessageCircleQuestion, MessagesSquare, NotepadTextDashed, Settings } from "lucide-react";
+import { Box, ChartNoAxesCombined, Codesandbox, Home, MessageCircleQuestion, MessagesSquare, NotepadTextDashed, PackageSearch, Settings } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -13,7 +13,7 @@ const General_Links = [
         icon: Home,
     },{
         label: 'sidebar.general_links.general_labels.1.label',
-        href: '/statistics',
+        href: 'statistics',
         icon: ChartNoAxesCombined,
     },
 ];
@@ -21,15 +21,19 @@ const General_Links = [
 const Shop_Links = [
     {
         label: 'sidebar.shop_links.shop_labels.0.label',
-        href: '/orders',
-        icon: Box,
+        href: 'products',
+        icon: PackageSearch,
     },{
         label: 'sidebar.shop_links.shop_labels.1.label',
-        href: '/mytemplates',
-        icon: NotepadTextDashed,
+        href: 'orders',
+        icon: Box,
     },{
         label: 'sidebar.shop_links.shop_labels.2.label',
-        href: '/notifications',
+        href: 'mytemplates',
+        icon: NotepadTextDashed,
+    },{
+        label: 'sidebar.shop_links.shop_labels.3.label',
+        href: 'notifications',
         icon: MessagesSquare,
     }
 ];
@@ -37,11 +41,11 @@ const Shop_Links = [
 const Support_Links = [
     {
         label: 'sidebar.support_links.support_labels.0.label',
-        href: '/settings',
+        href: 'settings',
         icon: Settings,
     },{
         label: 'sidebar.support_links.support_labels.1.label',
-        href: '/help',
+        href: 'help',
         icon: MessageCircleQuestion,
     },
 ];
@@ -70,13 +74,14 @@ export default function SideBar(){
                     <ul className="space-y-1">
                         {General_Links.map((link, index) => {
                             return (
-                                <li 
-                                key={index} 
-                                className={`capitalize px-4 py-2 rounded-lg 
+                                <Link 
+                                    href={link.href !== '/seller' ? `/seller/${link.href}` : link.href}
+                                    key={index} 
+                                    className={`capitalize px-4 py-2 rounded-lg 
                                         flex items-center gap-2 transition-colors
                                         ${CurrentPage === link.href.split('/').pop() ? 'bg-[#892CDC]/20 text-[#892CDC] border border-[#892CDC]/20 cursor-default' : 'dark:text-neutral-400 hover:text-[#892CDC] text-neutral-600 cursor-pointer hover:bg-[#892CDC]/10'}`}>
                                     <link.icon size={25} /> {t(link.label)}
-                                </li>
+                                </Link>
                             )
                         })}
                     </ul>
@@ -86,14 +91,15 @@ export default function SideBar(){
                     text-neutral-400  flex items-center gap-2">
                         {t('sidebar.shop_links.primary_title')} <hr className="w-full dark:border-neutral-900" />
                     </h4>
-                    <ul>
+                    <ul className="space-y-1">
                         {Shop_Links.map((link, index) => {
                             return (
-                                <li 
-                                key={index} 
-                                className={`relative capitalize px-4 py-2 rounded-lg 
-                                    flex items-center gap-2 transition-colors
-                                    ${CurrentPage === link.href.split('/').pop() ? 'bg-[#892CDC]/20 text-[#892CDC] border border-[#892CDC]/20 cursor-default' : 'dark:text-neutral-400 hover:text-[#892CDC] text-neutral-600 cursor-pointer hover:bg-[#892CDC]/10'}`}>
+                                <Link
+                                    href={link.href !== '/seller' ? `/seller/${link.href}` : link.href}
+                                    key={index} 
+                                    className={`relative capitalize px-4 py-2 rounded-lg 
+                                        flex items-center gap-2 transition-colors
+                                        ${CurrentPage === link.href.split('/').pop() ? 'bg-[#892CDC]/20 text-[#892CDC] border border-[#892CDC]/20 cursor-default' : 'dark:text-neutral-400 hover:text-[#892CDC] text-neutral-600 cursor-pointer hover:bg-[#892CDC]/10'}`}>
                                     <link.icon size={25} /> {t(link.label)} {index === 2 && (
                                         <span 
                                         className="absolute z-20 right-2 text-sm px-2 py-0.5
@@ -103,7 +109,7 @@ export default function SideBar(){
                                                     0
                                         </span>
                                     )}
-                                </li>
+                                </Link>
                             )
                         })}
                     </ul>
@@ -113,16 +119,17 @@ export default function SideBar(){
                     text-neutral-400 flex items-center gap-2">
                         {t('sidebar.support_links.primary_title')}  <hr className="w-full dark:border-neutral-900" />
                     </h4>
-                    <ul>
+                    <ul className="space-y-1">
                         {Support_Links.map((link, index) => {
                             return (
-                                <li 
-                                key={index} 
-                                className={`capitalize px-4 py-2 rounded-lg 
+                                <Link
+                                    href={link.href !== '/seller' ? `/seller/${link.href}` : link.href}
+                                    key={index} 
+                                    className={`capitalize px-4 py-2 rounded-lg 
                                         flex items-center gap-2 transition-colors
                                         ${CurrentPage === link.href.split('/').pop() ? 'bg-[#892CDC]/20 text-[#892CDC] border border-[#892CDC]/20 cursor-default' : 'dark:text-neutral-400 hover:text-[#892CDC] text-neutral-600 cursor-pointer hover:bg-[#892CDC]/10'}`}>
                                     <link.icon size={25} /> {t(link.label)}
-                                </li>
+                                </Link>
                             )
                         })}
                     </ul>

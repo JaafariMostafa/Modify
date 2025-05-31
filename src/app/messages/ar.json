@@ -120,6 +120,8 @@
                 "primary_title": "المتجر",
                 "shop_labels": [
                     {
+                        "label": "المنتجات"
+                    },{
                         "label": "الطلبات"
                     },
                     {

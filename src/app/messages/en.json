@@ -120,6 +120,8 @@
                 "primary_title": "shop",
                 "shop_labels": [
                     {
+                        "label": "products"
+                    },{
                         "label": "orders"
                     },
                     {

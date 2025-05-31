@@ -5,7 +5,7 @@ import TotalOrders from "./TotalOrders";
 import TotalTemplates from "./TotalTemplates";
 // import SellerTable from "./SellerTable";
 import { getLocale, getTranslations } from "next-intl/server";
-import SalesBarChart from "@/Components/SalesBarChart";
+// import SalesBarChart from "@/Components/SalesBarChart";
 
 
 
