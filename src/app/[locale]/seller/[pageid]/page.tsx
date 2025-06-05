@@ -7,8 +7,8 @@ interface PageProps {
     };
 }
 
-export default function Page({ params }: PageProps) {
-    const PAGE_ID = params.pageid;
+export default async function page({ params }: PageProps) {
+    const PAGE_ID = await params.pageid;
     switch (PAGE_ID) {
         case 'products':
             return <ProductsPage />

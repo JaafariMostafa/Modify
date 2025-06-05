@@ -11,8 +11,9 @@ type PageProps = {
 
 
 // Make it async just to be safe (even if no await)
-export default async function Page({ params }: PageProps) {
-  switch (params.pageid) {
+export default async function page({ params }: PageProps) {
+    const PAGE_ID = await params.pageid;
+    switch (PAGE_ID) {
     case 'products':
       return (
         <div>
