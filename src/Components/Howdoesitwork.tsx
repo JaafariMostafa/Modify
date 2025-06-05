@@ -20,7 +20,7 @@ const Process_Steps: Step[] = [
     },
     {
         id: 2,
-        titleKey: 'steps.0.title',
+        titleKey: 'steps.1.title',
         icon: (
             <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
                 <rect x="4" y="4" width="16" height="16" rx="2" stroke="#892CDC" strokeWidth="2" />
@@ -30,7 +30,7 @@ const Process_Steps: Step[] = [
     },
     {
         id: 3,
-        titleKey: 'steps.0.title',
+        titleKey: 'steps.2.title',
         icon: (
             <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
                 <circle cx="7" cy="12" r="3" stroke="#892CDC" strokeWidth="2" />
@@ -41,7 +41,7 @@ const Process_Steps: Step[] = [
     },
     {
         id: 4,
-        titleKey: 'steps.0.title',
+        titleKey: 'steps.3.title',
         icon: (
             <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
                 <path d="M12 3v18M12 3l4 4M12 3l-4 4" stroke="#892CDC" strokeWidth="2" />
@@ -54,20 +54,26 @@ export default async function Howdoesitwork() {
     const locale = await getLocale();
     const IsArabic = locale === 'ar';
   return (
-    <main id='howitworks?' className='lg:scroll-mt-44 scroll-mt-28 w-full lg:px-20 md:px-12 px-6'>
+    <main 
+        id='howitworks?' 
+        className='lg:scroll-mt-44 scroll-mt-28 w-full 
+            lg:px-20 md:px-12 px-6'>
         <div className='w-full flex justify-center mb-10'>
             <h1 className='text-2xl text-[#892CDC] dark:text-[#D9ACF5] font-semibold'>
                 {t('title')}
             </h1>
         </div>
         <section 
-            className='w-full shadow grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1
-                p-10 rounded-2xl dark:bg-black bg-violet-50 dark:border border-neutral-900 gap-4'>
+            className='w-full shadow grid lg:grid-cols-4 
+                md:grid-cols-3 sm:grid-cols-2 grid-cols-1
+                p-10 rounded-lg bg-transparent dark:shadow-neutral-900
+                dark:border border-neutral-900 gap-4'>
             {Process_Steps.map((card) => {
                 return (
                     <div 
                         key={card.id}
-                        className='dark:border shadow border-neutral-800 rounded-lg dark:bg-transparent'
+                        className='border border-neutral-100 
+                        shadow dark:border-neutral-900 rounded-lg dark:bg-transparent'
                         >
                         <div className='flex flex-col items-center justify-center p-4 space-y-2'>
                             <div className='w-16 h-16 flex items-center justify-center rounded-full bg-[#892CDC]/10'>
