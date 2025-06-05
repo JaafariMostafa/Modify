@@ -1,15 +1,6 @@
 import ProductsPage from "./Pages/ProductsPage";
 
-
-
-
-interface PageProps {
-    params: {
-        pageid: string;
-    };
-}
-
-export default async function Page({ params }: PageProps) {
+export default function Page({ params }) {
     const PAGE_ID = params.pageid;
     switch (PAGE_ID) {
         case 'products':
