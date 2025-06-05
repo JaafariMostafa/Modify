@@ -9,6 +9,8 @@ const FakeProductData = [
         id: 1,
         title: "Modern Wooden Chair",
         price: 120,
+        saleprice: 200,
+        bestseller: true,
         image: "https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg",
         styles: 'lg:-rotate-[20deg] lg:translate-x-40 lg:translate-y-10 lg:scale-75 lg:z-10 lg:group-hover:scale-100 lg:group-hover:translate-x-0 lg:group-hover:translate-y-0 lg:group-hover:-rotate-0 lg:transition-transform lg:duration-500 lg:ease-in-out',
     },
@@ -16,6 +18,8 @@ const FakeProductData = [
         id: 2,
         title: "Minimalist Table Lamp",
         price: 80,
+        saleprice: 200,
+        bestseller: true,
         image: "https://images.pexels.com/photos/112811/pexels-photo-112811.jpeg",
         styles: 'z-20',
     },
@@ -23,6 +27,8 @@ const FakeProductData = [
         id: 3,
         title: "Cozy Fabric Sofa",
         price: 350,
+        saleprice: 200,
+        bestseller: true,
         image: "https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg",
         styles: 'lg:rotate-[20deg] lg:-translate-x-40 lg:translate-y-10 lg:scale-75 lg:z-10 lg:group-hover:scale-100 lg:group-hover:translate-x-0 lg:group-hover:translate-y-0 lg:group-hover:-rotate-0 lg:transition-transform lg:duration-500 lg:ease-in-out',
     }
@@ -41,7 +47,9 @@ export default async function FeaturedProducts() {
                 return (
                     <FeaturedProduct
                         key={product.id}
+                        RegularPrice={product.saleprice}
                         ProductImage={product.image}
+                        isBestSeller={product.bestseller}
                         ProductTitle={product.title}
                         Card_BTN_Text={t('customize_your_product')}
                         ProductPrice={product.price}
