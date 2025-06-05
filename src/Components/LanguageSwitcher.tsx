@@ -1,5 +1,4 @@
 'use client';
-
 import { Languages } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
