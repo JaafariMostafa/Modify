@@ -24,15 +24,17 @@ export default async function ServiceOverview() {
   const IsArabic = locale === 'ar';
   const Rotate_Icon = IsArabic ? '-rotate-90' : '';
   return (
-    <section dir={IsArabic ? "rtl" : "ltr"} className="flex flex-col gap-12 mx-auto px-4 items-center">
+    <section 
+      dir={IsArabic ? "rtl" : "ltr"} 
+      className="flex flex-col gap-12 mx-auto px-4 items-center">
       {/* Service Overview */}
       <div className="w-full">
         <h2 className="text-3xl md:text-4xl font-bold text-[#892CDC] mb-6">
           {t('product_placement_content.title')}
         </h2>
-        <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+        {/* <p className="text-gray-600 text-base md:text-lg leading-relaxed">
           {t('product_placement_content.description')}
-        </p>
+        </p> */}
       </div>
       <ul className="w-full max-w-3xl space-y-6">
         {Content.map((item, index) => (
