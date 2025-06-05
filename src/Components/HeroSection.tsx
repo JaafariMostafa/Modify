@@ -1,6 +1,6 @@
 import { ArrowUpRight, Star } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
-import CTAButton from "./CTAButton";
+import SSRCTAButton from "./CTAButton/SSRCTAButton";
 import ImageCarousel from "./useImageCarousel";
 
 export default function HeroSection() {
@@ -44,7 +44,7 @@ export default function HeroSection() {
                     <div 
                         className="py-6 w-full flex justify-center 
                             gap-2 items-center Fade-In">
-                        <CTAButton />
+                        <SSRCTAButton />
                         <button
                             className="flex justify-between bg-transparent hover:bg-[#892CDC]/10 dark:bg-neutral-900 dark:hover:bg-neutral-900/10 
                                 transition-all duration-200 items-center gap-2 py-2 text-[#892CDC] dark:text-neutral-300
