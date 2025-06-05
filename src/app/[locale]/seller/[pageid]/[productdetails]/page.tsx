@@ -1,8 +1,17 @@
 import React from 'react';
 import ProductDetails from './ProductDetails';
 
+type PageProps = {
+  params: {
+    locale: string;
+    pageid: string;
+    productdetails: string;
+  };
+};
+
+
 // Make it async just to be safe (even if no await)
-export default async function Page({ params }) {
+export default async function Page({ params }: PageProps) {
   switch (params.pageid) {
     case 'products':
       return (
