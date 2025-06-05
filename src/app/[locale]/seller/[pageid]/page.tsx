@@ -9,7 +9,7 @@ interface PageProps {
     };
 }
 
-export default function Page({ params }: PageProps) {
+export default async function Page({ params }: PageProps) {
     const PAGE_ID = params.pageid;
     switch (PAGE_ID) {
         case 'products':
