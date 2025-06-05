@@ -3,18 +3,21 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import React, { useState } from 'react'
 import LoadingImage from './LoadingImage';
+import Link from 'next/link';
 
 interface ProductCardProps {
     ProductImages: string[];
     ProductTitle: string;
     ProductColors: string[];
     ProductPrice: number;
+    ProductId: string;
 }
 export default function ProductCard({ 
     ProductImages, 
     ProductTitle, 
     ProductColors, 
-    ProductPrice 
+    ProductPrice,
+    ProductId,
 } : ProductCardProps ){
     const [CurrentImage, setCurrentImage] = useState(0);
     const [IsLoadingImage, setIsLoadingImage] = useState(true);
@@ -34,20 +37,23 @@ export default function ProductCard({
         });
     }
 
+
     return (
         <main className='w-full min-h-10 p-1 rounded-lg dark:bg-neutral-900 border dark:border-neutral-800'>
             <div 
                 className={`relative overflow-hidden w-full h-[200px] transition-all
                     rounded-lg flex items-center justify-center`}>
                 {IsLoadingImage && <LoadingImage />}
-                <Image 
-                    src={ProductImages[CurrentImage]}
-                    alt={ProductTitle}
-                    fill
-                    className={`object-cover transition-opacity duration-300 ${IsLoadingImage ? 'opacity-0' : 'opacity-100'}`}
-                    onLoad={() => setIsLoadingImage(false)}
-                    priority
-                />
+                <Link href={`/seller/products/${ProductId}`}>
+                    <Image 
+                        src={ProductImages[CurrentImage]}
+                        alt={ProductTitle}
+                        fill
+                        className={`object-cover transition-opacity duration-300 ${IsLoadingImage ? 'opacity-0' : 'opacity-100'}`}
+                        onLoad={() => setIsLoadingImage(false)}
+                        priority
+                        />
+                </Link>
             </div>
             <span className='w-full flex justify-center items-center gap-2 text-sm text-neutral-500 dark:text-neutral-600 p-2'>
                 <ArrowLeft 
