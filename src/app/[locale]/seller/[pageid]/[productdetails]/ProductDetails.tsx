@@ -6,28 +6,32 @@ import Image from 'next/image';
 import { Fake_Products } from '../../FakeProductsData';
 import LanguageSwitcher from '@/Components/LanguageSwitcher';
 import { ModeToggle } from '@/app/ModeToggle';
+import { CheckCircleIcon } from 'lucide-react';
+import ProductCard from '@/Components/CradsUI/ProductCard';
 
 export default function ProductDetails_Images() {
     const pathname = usePathname();
     const params = useParams();
     const ProductId = params?.productdetails;
     const segments = pathname.split('/').filter(Boolean);
-
+    const RemoveLocaleLanguage = segments.slice(1, segments.length);
     // Build breadcrumb items with links
-    const breadcrumbs = segments.map((segment, idx) => {
-        const href = '/' + segments.slice(0, idx + 1).join('/');
+    const breadcrumbs = RemoveLocaleLanguage.map((segment, idx) => {
+        const href = '/' + segments.slice(1, idx + 2).join('/');
         // Capitalize segment for display
         const label = decodeURIComponent(segment.charAt(0).toUpperCase() + segment.slice(1));
         return (
             <span 
                 key={href}
-                className={`${idx === segments.length - 1 ? 'dark:text-neutral-200' : 'dark:hover:text-neutral-400 text-neutral-600'} flex items-center`}>
+                className={`text-sm lowercase ${idx === segments.length - 2 ? 'dark:text-neutral-200 text-neutral-800 font-semibold' : 'dark:hover:text-neutral-400 text-neutral-400'} flex items-center`}>
                 <Link 
                     href={href}>
                         {label}
                 </Link>
-                    {idx < segments.length - 1 && (
-                        <span className="mx-2 text-gray-400" aria-hidden="true">
+                    {idx < segments.length - 2 && (
+                        <span 
+                            className="mx-2 text-gray-400" 
+                            aria-hidden="true">
                             <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
                                 <path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                             </svg>
@@ -57,7 +61,7 @@ export default function ProductDetails_Images() {
                 <div>
                     <div 
                         className='relative rounded-t-lg overflow-hidden 
-                            w-full h-[60vh] border-t border-x border-violet-600'>
+                            w-full h-[60vh]'>
                         <Image 
                             src={Selected_Product?.images[CurrentPrimaryImage] || ''}
                             alt=''
@@ -72,7 +76,7 @@ export default function ProductDetails_Images() {
                                 key={index} 
                                 className={`relative rounded-b-lg overflow-hidden 
                                     w-full h-24 mt-2 cursor-pointer
-                                    ${CurrentPrimaryImage === index ? 'border-x-2 border-b border-violet-600' : ''}`}>
+                                    ${CurrentPrimaryImage === index ? 'border border-violet-600' : ''}`}>
                                 <Image 
                                     src={image}
                                     alt={`Product Image ${index + 1}`}
@@ -84,8 +88,8 @@ export default function ProductDetails_Images() {
                     </div>
                 </div>
                 <div 
-                    className="relative border border-violet-600 rounded-lg 
-                        p-6 flex flex-col gap-6 shadow-md">
+                    className="relative shadow border dark:border-neutral-900 
+                    rounded-lg p-6 flex flex-col gap-6 shadow-md">
                     <h1 className="text-3xl font-bold text-violet-700 dark:text-violet-400 mb-2">
                         {Selected_Product?.title}
                     </h1>
@@ -115,13 +119,58 @@ export default function ProductDetails_Images() {
                             </span>
                         ))}
                     </div>
-                    <div className="absolute left-0 bottom-4 px-4 w-full flex justify-center">
-                        <button
-                            className="mt-4 w-full bg-violet-700 hover:bg-violet-800 text-white font-semibold py-2 rounded-lg transition-colors"
-                            >
-                            Customize Now
-                        </button>
+                    <div 
+                        className="absolute mt-5 left-0 bottom-4 
+                            px-4 w-full flex 
+                            justify-center">
+                        <div 
+                            className='w-full space-y-4 bg-violet-600/10 p-4 
+                                border border-violet-400 dark:border-violet-600/40 
+                                rounded-lg'>
+                            <div className='text-violet-500 space-y-4'>
+                                <p className='text-sm'>
+                                    Get the best price and quality on every order 
+                                    with <ins className='flex items-end gap-1 text-xl font-semibold'>Modify <span className='text-sm'>Choice.</span></ins>
+                                </p>
+                                <ul>
+                                    <li className='flex items-center gap-2 text-sm'>
+                                        <CheckCircleIcon size={16} /> 100% <span className='text-xl font-semibold'>Cotton.</span>
+                                    </li>
+                                    <li className='flex items-center gap-2 text-sm'>
+                                        <CheckCircleIcon size={16} /> Fast <span className='text-xl font-semibold'>Delivery.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button
+                                className="w-full h-max bg-violet-700 
+                                    hover:bg-violet-800 text-white 
+                                    font-semibold py-2 rounded-lg 
+                                    transition-colors">
+                                Customize Now
+                            </button>
+                        </div>
                     </div>
+                </div>
+            </section>
+            <section className='my-10'>
+                <div className='flex items-center gap-4'>
+                    <h1 className='text-2xl text-nowrap font-semibold text-neutral-800 dark:text-neutral-200'>
+                        Frequently sold together
+                    </h1> <hr className='border-neutral-200 dark:border-neutral-800 w-full'/>
+                </div>
+                <div className='grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4 mt-6'>
+                    {Fake_Products.map((product, index) => {
+                        return (
+                            <ProductCard
+                                key={index}
+                                ProductColors={product.colors}
+                                ProductId={product.id}
+                                ProductPrice={product.price}
+                                ProductImages={product.images}
+                                ProductTitle={product.title}
+                            />
+                        )
+                    })}
                 </div>
             </section>
         </main>

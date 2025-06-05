@@ -24,7 +24,7 @@ export default async function SectionTitle({ PrimaryTitle, SecondaryTitle, Butto
         </span>
       </div>
       <Link
-        href='/'
+        href='/seller/products'
         className='text-nowrap text-xs text-[#892CDC]
           dark:text-neutral-400 hover:text-neutral-500
           dark:hover:text-[#D9ACF5] transition-colors 

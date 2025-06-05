@@ -3,6 +3,7 @@ import SideBar from "./SideBar";
 import { hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import Footer from "@/Components/Footer";
 
 
 const ubuntu = Ubuntu({
@@ -29,9 +30,7 @@ export default async function Layout({ children, params }: { children: React.Rea
                     {children}
                 </div>
             </section>
-            <footer className="bg-gray-800 text-white p-4 text-center">
-                © 2023 Your Company
-            </footer>
+            <Footer />
         </main>
     );
 }

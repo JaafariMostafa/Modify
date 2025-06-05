@@ -1,5 +1,6 @@
 import { ArrowUpRight, Edit3, Package, Truck } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
+import Link from "next/link";
 
 const Content = [
   {
@@ -49,12 +50,13 @@ export default async function ServiceOverview() {
           </li>
         ))}
       </ul>
-      <button
+      <Link
+        href='/seller/products'
         className="flex bg-[#892CDC] hover:bg-[#892CDC]/90
             transition-all duration-200 items-center gap-2 
             py-2 px-6 rounded-lg text-white border border-[#892CDC]">
           {t('product_placement_content.cta_button')} <ArrowUpRight className={` ${Rotate_Icon}`} size={20} />
-      </button>
+      </Link>
     </section>
   );
 }

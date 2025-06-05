@@ -102,10 +102,11 @@ export default function SideBar(){
                                         ${CurrentPage === link.href.split('/').pop() ? 'bg-[#892CDC]/20 text-[#892CDC] border border-[#892CDC]/20 cursor-default' : 'dark:text-neutral-400 hover:text-[#892CDC] text-neutral-600 cursor-pointer hover:bg-[#892CDC]/10'}`}>
                                     <link.icon size={25} /> {t(link.label)} {index === 2 && (
                                         <span 
-                                        className="absolute z-20 right-2 text-sm px-2 py-0.5
+                                        className={`absolute z-20 text-sm px-2 py-0.5
                                                 rounded border dark:border-neutral-800 
                                                 border-[#892CDC] bg-[#892CDC]/30 
-                                                dark:bg-neutral-900/60 dark:text-neutral-400 text-[#892CDC]">
+                                                dark:bg-neutral-900/60 dark:text-neutral-400 
+                                                text-[#892CDC] ${IsArabic ? "left-2" : "right-2"}`}>
                                                     0
                                         </span>
                                     )}

@@ -15,9 +15,9 @@ export default function Footer() {
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
                 <div className="w-8 h-8 bg-violet-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">C</span>
+                  <span className="text-white font-bold text-sm">M</span>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white">Company</h3>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white">Modify.ma</h3>
               </div>
               <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
                 Building amazing digital experiences with modern design and cutting-edge technology.
