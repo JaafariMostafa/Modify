@@ -1,7 +1,7 @@
 import { ArrowUpRight, Star } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import SSRCTAButton from "./CTAButton/SSRCTAButton";
-import ImageCarousel from "./useImageCarousel";
+import DashboardScreen from "./DashboardScreen";
 
 export default function HeroSection() {
     
@@ -54,7 +54,8 @@ export default function HeroSection() {
                     </div>
                 </div>
                 {/* Right: Product Image */}
-                <ImageCarousel />
+                <DashboardScreen />
+                
             </section>
         </main>
     );

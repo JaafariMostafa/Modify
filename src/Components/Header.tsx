@@ -18,7 +18,7 @@ export default async function Header(){
         <header 
             className="sticky top-0 z-50 backdrop-blur 
                 dark:bg-black/50 w-full border-b 
-                py-3 dark:border-neutral-800 border-neutral-300 
+                py-3 dark:border-neutral-800 border-neutral-100 
                 lg:px-20 md:px-12 px-6 flex gap-8 items-center 
                 justify-between">
             <h1 className="text-2xl uppercase font-bold text-[#892CDC] dark:text-white">
