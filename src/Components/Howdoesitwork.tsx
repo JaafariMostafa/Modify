@@ -85,8 +85,8 @@ export default async function Howdoesitwork() {
                 
                 <div className='relative grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 
                     gap-6 lg:gap-8 p-8 lg:p-12 rounded-2xl 
-                    bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm
-                    border border-gray-200/50 dark:border-gray-800/50
+                    bg-white/50 dark:bg-neutral-900/50 backdrop-blur-sm
+                    border border-gray-200 dark:border-neutral-800
                     shadow-xl shadow-gray-200/20 dark:shadow-gray-900/20'>
                     
                     {Process_Steps.map((card, index) => {
@@ -94,10 +94,10 @@ export default async function Howdoesitwork() {
                             <div
                                 key={card.id}
                                 className='group relative
-                                    border border-gray-200/60 dark:border-gray-800/60 
-                                    rounded-xl bg-white/80 dark:bg-gray-900/80 
-                                    backdrop-blur-sm shadow-lg shadow-gray-200/10 
-                                    dark:shadow-gray-900/20 hover:shadow-xl 
+                                    border border-gray-200 dark:border-neutral-800 
+                                    rounded-xl bg-white/80 dark:bg-neutral-900/80 
+                                    backdrop-blur-sm shadow-lg shadow-neutral-900/20 
+                                    dark:shadow-neutral-900/50 hover:shadow-xl 
                                     hover:shadow-[#892CDC]/10 dark:hover:shadow-[#D9ACF5]/10
                                     transition-all duration-300 hover:-translate-y-2
                                     hover:border-[#892CDC]/30 dark:hover:border-[#D9ACF5]/30'
