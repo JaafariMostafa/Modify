@@ -1,4 +1,5 @@
 import ProductsPage from "./Pages/ProductsPage";
+import TemplatesPage from "./Pages/TemplatesPage";
 
 interface PageProps {
     params: {
@@ -12,6 +13,8 @@ export default async function page({ params }: PageProps) {
     switch (PAGE_ID) {
         case 'products':
             return <ProductsPage />
+        case 'mytemplates':
+            return <TemplatesPage />
         default:
             break;
     }
