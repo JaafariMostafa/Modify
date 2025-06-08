@@ -1,12 +1,11 @@
 import { ArrowUpRight, Star } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
 import SSRCTAButton from "./CTAButton/SSRCTAButton";
 import DashboardScreen from "./DashboardScreen";
+import { getLocale, getTranslations } from "next-intl/server";
 
-export default function HeroSection() {
-    
-    const t = useTranslations('hero');
-    const locale = useLocale();
+export default async function HeroSection() {
+    const t = await getTranslations('hero');
+    const locale = await getLocale();
     const IsArabic = locale === 'ar';
     const Rotate_Icon = IsArabic ? '-rotate-90' : '';
     return (
@@ -55,7 +54,6 @@ export default function HeroSection() {
                 </div>
                 {/* Right: Product Image */}
                 <DashboardScreen />
-                
             </section>
         </main>
     );

@@ -1,4 +1,5 @@
 'use client';
+import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 
@@ -27,10 +28,24 @@ export default function DashboardScreen() {
 
     const imageTransform = `perspective(1000px) rotateY(${rotateY}deg) rotateX(${rotateX}deg) translateY(${translateY}px)`;
 
+    const { theme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    // Fix for hydration mismatch (next-themes only works after mount)
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    if (!mounted) return null; // or a loader
+
+    const imageSrc =
+        theme === 'dark'
+        ? '/DashboardScreenDark.png'
+        : '/DashboardScreenLight.png';
     return (
         <div className="w-full p-4">
             <img
-                src="/DashboardScreen.png"
+                src={imageSrc}
                 alt="Modify Dashboard"
                 className="object-cover w-full h-full rounded-lg 
                     overflow-hidden border border-neutral-200 
