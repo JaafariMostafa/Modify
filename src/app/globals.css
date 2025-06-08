@@ -79,3 +79,12 @@ body {
 .animate-slideIn {
   animation: slideIn 0.4s ease-out forwards;
 }
+.Test-Pattern {
+  background-color: #0f0f23;
+  background-image: 
+    linear-gradient(rgba(137, 44, 220, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(217, 172, 245, 0.2) 1px, transparent 1px);
+  background-size: 20px 20px;
+
+  box-shadow: 0 0 15px rgba(217, 172, 245, 0.6), 0 0 30px rgba(137, 44, 220, 0.4);
+}

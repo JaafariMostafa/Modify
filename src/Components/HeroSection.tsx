@@ -9,7 +9,7 @@ export default async function HeroSection() {
     const IsArabic = locale === 'ar';
     const Rotate_Icon = IsArabic ? '-rotate-90' : '';
     return (
-        <main className="w-full min-h-80 lg:px-20 md:px-12 px-6 pb-6 pt-20">
+        <main className="w-full min-h-80 pb-6 pt-20">
             <section 
                 className="w-full flex flex-col
                     items-center justify-center space-y-8 
@@ -17,7 +17,8 @@ export default async function HeroSection() {
                 {/* Left: Text Content */}
                 <div 
                     className="w-full flex-1 flex flex-col lg:items-center 
-                        md:items-start items-center space-y-4">
+                        md:items-start items-center space-y-4
+                        lg:px-20 md:px-12 px-6 lg:mb:32 md:mb-32">
                     <span
                         className="flex items-center gap-2 px-4 py-1 border-[#892CDC] 
                             text-[#892CDC] rounded-full text-sm 
