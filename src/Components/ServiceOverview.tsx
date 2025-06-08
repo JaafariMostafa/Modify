@@ -19,44 +19,98 @@ const Content = [
     icon: Truck
   }
 ];
+
 export default async function ServiceOverview() {
   const t = await getTranslations('product_placement');
   const locale = await getLocale();
   const IsArabic = locale === 'ar';
   const Rotate_Icon = IsArabic ? '-rotate-90' : '';
+
   return (
-    <section 
-      dir={IsArabic ? "rtl" : "ltr"} 
-      className="flex flex-col gap-12 mx-auto px-4 items-center">
-      {/* Service Overview */}
-      <div className="w-full">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#892CDC] mb-6">
-          {t('product_placement_content.title')}
-        </h2>
-        {/* <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+    <section className="w-full px-4 lg:px-8 py-8 lg:py-12">
+      {/* Header */}
+      <div className="mb-8">
+        <p className="text-gray-600 dark:text-gray-300 text-base lg:text-lg leading-relaxed max-w-2xl">
           {t('product_placement_content.description')}
-        </p> */}
+        </p>
       </div>
-      <ul className="w-full max-w-3xl space-y-6">
-        {Content.map((item, index) => (
-          <li key={index} className="flex items-start gap-3">
-            <span className="border border-[#892CDC] rounded-full text-[#892CDC] p-1 flex-shrink-0">
-              <item.icon />
-            </span>
-            <div className="space-y-2">
-              <h3 className="text-lg font-semibold text-neutral-400">{t(item.title)}</h3>
-              <p className="text-gray-600 text-sm">{t(item.description)}</p>
+
+      {/* Features as Flex Column */}
+      <div className="flex flex-col gap-4 mb-8">
+        {Content.map((item, index) => {
+          const IconComponent = item.icon;
+          return (
+            <div
+              key={index}
+              style={{ animationDelay: `${index * 100}ms` }}
+              className="group flex items-start gap-4 p-4 lg:p-6
+                bg-gradient-to-r from-white via-gray-50 to-gray-100
+                dark:from-gray-800 dark:via-gray-900 dark:to-black
+                border border-gray-200/50 dark:border-gray-700/50
+                rounded-xl shadow-md shadow-gray-300/20 dark:shadow-gray-900/30
+                hover:shadow-lg hover:shadow-[#892CDC]/10 dark:hover:shadow-[#892CDC]/20
+                transition-all duration-300 ease-out
+                hover:scale-[1.02] hover:border-[#892CDC]/30
+                animate-slideIn"
+            >
+              {/* Icon */}
+              <div className="flex-shrink-0">
+                <div className="w-12 h-12 lg:w-14 lg:h-14 
+                  bg-gradient-to-br from-[#892CDC] to-[#6B1A99]
+                  rounded-xl flex items-center justify-center
+                  shadow-md shadow-[#892CDC]/20
+                  group-hover:shadow-lg group-hover:shadow-[#892CDC]/30
+                  transition-all duration-300
+                  group-hover:scale-110">
+                  <IconComponent 
+                    size={22} 
+                    className="text-white" 
+                  />
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="flex-1 min-w-0">
+                <h3 className="font-semibold text-lg lg:text-xl mb-2
+                  text-gray-900 dark:text-white
+                  group-hover:text-[#892CDC] dark:group-hover:text-[#D9ACF5]
+                  transition-colors duration-300">
+                  {t(item.title)}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300 
+                  text-sm lg:text-base leading-relaxed
+                  group-hover:text-gray-700 dark:group-hover:text-gray-200
+                  transition-colors duration-300">
+                  {t(item.description)}
+                </p>
+              </div>
             </div>
-          </li>
-        ))}
-      </ul>
-      <Link
-        href='/seller/products'
-        className="flex bg-[#892CDC] hover:bg-[#892CDC]/90
-            transition-all duration-200 items-center gap-2 
-            py-2 px-6 rounded-lg text-white border border-[#892CDC]">
-          {t('product_placement_content.cta_button')} <ArrowUpRight className={` ${Rotate_Icon}`} size={20} />
-      </Link>
+          );
+        })}
+      </div>
+
+      {/* CTA Button */}
+      <div className="mt-8">
+        <Link
+          href="/seller/products"
+          className="group inline-flex items-center gap-3 px-6 py-3 
+            bg-gradient-to-r from-[#892CDC] to-[#6B1A99]
+            hover:from-[#7A25B8] hover:to-[#5A1580]
+            text-white font-semibold
+            rounded-xl shadow-lg shadow-[#892CDC]/20
+            transition-all duration-300 ease-out"
+        >
+          <span className="text-white">
+            {t('product_placement_content.cta_button')}
+          </span>
+          <ArrowUpRight 
+            size={18} 
+            className={`text-white 
+              group-hover:translate-x-1 group-hover:-translate-y-1 
+              transition-transform duration-300 ${Rotate_Icon}`}
+          />
+        </Link>
+      </div>
     </section>
   );
 }
