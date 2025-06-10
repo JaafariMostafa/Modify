@@ -1,7 +1,20 @@
 'use client';
 import React, { useState, useMemo } from 'react';
-import { Search, Filter, Grid, List, Star, Eye, Download, Tag, Palette, Layout } from 'lucide-react';
+import { Search, Grid, List, Star, Eye, Download, Tag, Palette, Layout } from 'lucide-react';
 
+interface TemplateTypes {
+    id: string;
+    title: string;
+    category: string;
+    price: number;
+    images: string[];
+    colors: string[];
+    tags: string[];
+    rating: number;
+    downloads: number;
+    preview: string;
+    isPro: boolean;
+}
 // Mock data for templates
 const TEMPLATE_CATEGORIES = [
     'All Templates',
@@ -82,7 +95,7 @@ const FAKE_TEMPLATES = [
     // Add more templates as needed
 ];
 
-function TemplateCard({ template }) {
+function TemplateCard({ template }: { template: TemplateTypes }) {
     const [currentImage, setCurrentImage] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
 
