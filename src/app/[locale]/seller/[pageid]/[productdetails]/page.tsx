@@ -1,7 +1,7 @@
 import React from 'react';
 import ProductDetails from './ProductDetails';
 
-export default async function Page({ params }: { params: { locale: string; pageid: string; productdetails: string } }) {
+export default async function Page({ params }) {
   const { pageid } = params;
 
   switch (pageid) {
