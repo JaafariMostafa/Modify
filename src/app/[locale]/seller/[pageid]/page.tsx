@@ -2,13 +2,14 @@ import ProductsPage from "./Pages/ProductsPage";
 import TemplatesPage from "./Pages/TemplatesPage";
 
 interface PageProps {
-    params: {
+    params: Promise<{
         pageid: string;
-    };
+    }>;
 }
 
 export default async function page({ params }: PageProps) {
-    const PAGE_ID = params.pageid;
+    const { pageid: PAGE_ID } = await params;
+    
     switch (PAGE_ID) {
         case 'products':
             return <ProductsPage />
