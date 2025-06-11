@@ -1,7 +1,15 @@
 import React from 'react';
 import ProductDetails from './ProductDetails';
 
-export default async function Page({ params }) {
+type PageProps = {
+  params: {
+    productdetails: {
+      PRODUCT_DETAILS: string;
+    };
+  };
+};
+
+export default async function Page({ params }: PageProps) {
   const { PRODUCT_DETAILS } = params.productdetails;
 
   switch (PRODUCT_DETAILS) {
