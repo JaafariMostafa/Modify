@@ -1,15 +1,12 @@
 import React from 'react';
 import ProductDetails from './ProductDetails';
 
-interface PageProps {
-  params: {
-    locale: string;
-    pageid: string;
-  };
+
+interface ParamsType {
+  pageid: string;
 }
 
-// Make it async just to be safe (even if no await)
-export default async function page({ params }: PageProps) {
+export default async function page({ params }: { params: ParamsType }) {
   const { pageid } = params;
   
   switch (pageid) {
