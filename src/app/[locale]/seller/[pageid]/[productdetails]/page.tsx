@@ -1,18 +1,7 @@
 import React from 'react';
 import ProductDetails from './ProductDetails';
 
-interface ParamsType {
-  pageid: string;
-  productdetails: string;
-  locale: string;
-}
-
-// الطريقة الصحيحة لتعريف الـ props في app router
-interface PageProps {
-  params: ParamsType;
-}
-
-export default async function Page({ params }: PageProps) {
+export default async function Page({ params }: { params: { locale: string; pageid: string; productdetails: string } }) {
   const { pageid } = params;
 
   switch (pageid) {
