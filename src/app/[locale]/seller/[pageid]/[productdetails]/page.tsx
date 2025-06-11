@@ -2,9 +2,9 @@ import React from 'react';
 import ProductDetails from './ProductDetails';
 
 export default async function Page({ params }) {
-  const { pageid } = params;
+  const { PRODUCT_DETAILS } = params.productdetails;
 
-  switch (pageid) {
+  switch (PRODUCT_DETAILS) {
     case 'products':
       return (
         <div>
@@ -14,7 +14,7 @@ export default async function Page({ params }) {
     default:
       return (
         <div>
-          Sorry {pageid} not found
+          Sorry {PRODUCT_DETAILS} not found
         </div>
       );
   }
